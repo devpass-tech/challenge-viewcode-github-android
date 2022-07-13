@@ -10,11 +10,11 @@
         android:layout_width="@dimen/iv_default_size"
         android:layout_height="@dimen/iv_default_size"
         android:layout_margin="@dimen/margin_default"
+        android:contentDescription="@string/avatar_owner_repository"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/ic_launcher_foreground"
-        android:contentDescription="@string/avatar_owner_repository" />
+        tools:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
         android:id="@+id/tvRepositorio"

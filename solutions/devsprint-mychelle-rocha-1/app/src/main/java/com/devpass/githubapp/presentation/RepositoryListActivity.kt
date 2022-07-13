@@ -1,11 +1,8 @@
 package com.devpass.githubapp.presentation
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.ui.AppBarConfiguration
 import android.widget.Toast
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.devpass.githubapp.data.api.GitHubEndpoint
 import com.devpass.githubapp.data.model.Repository
 import com.devpass.githubapp.databinding.ActivityMainBinding
@@ -39,16 +36,19 @@ class RepositoryListActivity : AppCompatActivity() {
                 Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
             }
 
-            override fun onResponse(call: Call<List<Repository>>, response: Response<List<Repository>>) {
+            override fun onResponse(
+                call: Call<List<Repository>>,
+                response: Response<List<Repository>>
+            ) {
                 response.body()?.let {
                     configRv(it)
                 }
-                response.body()?.toString()?.let { Log.d("BODY", it) }
             }
         })
     }
-    private fun configRv(list: List<Repository>){
+
+    private fun configRv(list: List<Repository>) {
         binding.repositoryList.rvRepository.adapter = adapter
-        adapter.updateList(list)
+        adapter.submitList(list)
     }
 }
