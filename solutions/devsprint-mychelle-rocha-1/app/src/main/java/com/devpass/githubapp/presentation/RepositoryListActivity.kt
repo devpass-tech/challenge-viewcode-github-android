@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.ui.AppBarConfiguration
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.devpass.githubapp.data.api.GitHubEndpoint
 import com.devpass.githubapp.data.model.Repository
 import com.devpass.githubapp.databinding.ActivityMainBinding
@@ -16,6 +17,10 @@ import retrofit2.Response
 class RepositoryListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+
+    private val adapter by lazy {
+        RepositoryAdapter()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,10 +40,15 @@ class RepositoryListActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<List<Repository>>, response: Response<List<Repository>>) {
-
+                response.body()?.let {
+                    configRv(it)
+                }
                 response.body()?.toString()?.let { Log.d("BODY", it) }
             }
         })
     }
-
+    private fun configRv(list: List<Repository>){
+        binding.repositoryList.rvRepository.adapter = adapter
+        adapter.updateList(list)
+    }
 }
