@@ -1,7 +1,6 @@
 package com.devpass.githubapp.presentation
 
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.widget.SearchView
@@ -68,13 +67,13 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
                 response: Response<List<Repository>>
             ) {
                 response.body()?.let {
-                    getListRepository(it)
+                    setupListRepositoryAdapter(it)
                 }
             }
         })
     }
 
-    private fun getListRepository(list: List<Repository>) {
+    private fun setupListRepositoryAdapter(list: List<Repository>) {
         binding.repositoryList.rvRepository.adapter = adapter
         adapter.submitList(list)
     }
