@@ -41,13 +41,13 @@ class RepositoryListActivity : AppCompatActivity() {
                 response: Response<List<Repository>>
             ) {
                 response.body()?.let {
-                    configRv(it)
+                    getListRepository(it)
                 }
             }
         })
     }
 
-    private fun configRv(list: List<Repository>) {
+    private fun getListRepository(list: List<Repository>) {
         binding.repositoryList.rvRepository.adapter = adapter
         adapter.submitList(list)
     }

@@ -27,7 +27,7 @@ class RepositoryAdapter() :
     class RepositoryViewHolder(private val binding: RepositoryCellItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(repository: Repository) {
-            binding.tvRepositorio.text = repository.name
+            binding.tvRepository.text = repository.name
             binding.tvOwner.text = repository.owner.login
             Glide.with(itemView)
                 .load(repository.owner.avatarUrl)

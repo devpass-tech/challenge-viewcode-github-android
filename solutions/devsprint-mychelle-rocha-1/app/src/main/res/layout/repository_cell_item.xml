@@ -17,7 +17,7 @@
         tools:srcCompat="@drawable/ic_launcher_foreground" />
 
     <TextView
-        android:id="@+id/tvRepositorio"
+        android:id="@+id/tvRepository"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_default"
@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin_2dp"
         android:textAppearance="@style/TextAppearance.AppCompat.Small"
-        app:layout_constraintStart_toStartOf="@+id/tvRepositorio"
-        app:layout_constraintTop_toBottomOf="@+id/tvRepositorio"
+        app:layout_constraintStart_toStartOf="@+id/tvRepository"
+        app:layout_constraintTop_toBottomOf="@+id/tvRepository"
         tools:text="devpass-tech" />
 </androidx.constraintlayout.widget.ConstraintLayout>
