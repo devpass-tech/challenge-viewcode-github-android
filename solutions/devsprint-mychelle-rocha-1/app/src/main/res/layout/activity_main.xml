@@ -22,5 +22,12 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_repository_list" />
+    <include
+        android:id="@+id/repositoryList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_55dp"
+        android:layout_marginBottom="@dimen/margin_half"
+        layout="@layout/content_repository_list" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

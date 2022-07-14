@@ -22,6 +22,10 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
 
     private lateinit var binding: ActivityMainBinding
 
+    private val adapter by lazy {
+        RepositoryAdapter()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -63,8 +67,15 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
                 call: Call<List<Repository>>,
                 response: Response<List<Repository>>
             ) {
-                response.body()?.toString()?.let { Log.d("BODY", it) }
+                response.body()?.let {
+                    getListRepository(it)
+                }
             }
         })
+    }
+
+    private fun getListRepository(list: List<Repository>) {
+        binding.repositoryList.rvRepository.adapter = adapter
+        adapter.submitList(list)
     }
 }
