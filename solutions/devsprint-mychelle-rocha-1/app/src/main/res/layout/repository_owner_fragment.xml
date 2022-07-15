@@ -41,7 +41,7 @@
                 tools:text="Rodrigo Borges" />
 
             <TextView
-                android:id="@+id/tvBioOwner"
+                android:id="@+id/tvOwnerBio"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/margin_half"

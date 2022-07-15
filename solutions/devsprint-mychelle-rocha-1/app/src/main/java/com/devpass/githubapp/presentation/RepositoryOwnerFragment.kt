@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.devpass.githubapp.data.model.Owner
 import com.devpass.githubapp.databinding.RepositoryOwnerFragmentBinding
 
-class RepositoryOwnerFragment: Fragment() {
+class RepositoryOwnerFragment : Fragment() {
 
     private var _binding: RepositoryOwnerFragmentBinding? = null
 
@@ -20,7 +20,7 @@ class RepositoryOwnerFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding  = RepositoryOwnerFragmentBinding.inflate(inflater, container, false)
+        _binding = RepositoryOwnerFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -29,7 +29,7 @@ class RepositoryOwnerFragment: Fragment() {
         repositoryOwner(owner)
     }
 
-    private fun repositoryOwner(owner: Owner){
+    private fun repositoryOwner(owner: Owner) {
         binding.tvBioOwner.text = owner.url
     }
 }
