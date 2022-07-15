@@ -8,6 +8,9 @@
     <androidx.cardview.widget.CardView
         android:layout_width="@dimen/card_width_332dp"
         android:layout_height="@dimen/card_height_144dp"
+        android:layout_marginBottom="@dimen/margin_half"
+        app:cardElevation="@dimen/margin_12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,7 +25,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_32dp"
                 android:layout_marginTop="@dimen/margin_32dp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="GNU General Public License" />
