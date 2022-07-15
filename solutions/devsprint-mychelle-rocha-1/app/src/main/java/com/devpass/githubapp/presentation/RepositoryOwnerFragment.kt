@@ -30,6 +30,6 @@ class RepositoryOwnerFragment : Fragment() {
     }
 
     private fun repositoryOwner(owner: Owner) {
-        binding.tvBioOwner.text = owner.url
+        binding.tvOwnerBio.text = owner.url
     }
 }
