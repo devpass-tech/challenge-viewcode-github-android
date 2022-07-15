@@ -11,9 +11,7 @@ import com.devpass.githubapp.databinding.RepositoryOwnerFragmentBinding
 
 class RepositoryOwnerFragment : Fragment() {
 
-    private var _binding: RepositoryOwnerFragmentBinding? = null
-
-    private val binding get() = _binding!!
+    private lateinit var binding: RepositoryOwnerFragmentBinding
     private lateinit var owner: Owner
 
     override fun onCreateView(
@@ -21,7 +19,7 @@ class RepositoryOwnerFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = RepositoryOwnerFragmentBinding.inflate(inflater, container, false)
+        binding = RepositoryOwnerFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
