@@ -12,16 +12,15 @@ import com.devpass.githubapp.databinding.ContentRepositoryListBinding
 import com.devpass.githubapp.databinding.FragmentRepositoryAboutBinding
 
 class RepositoryAboutFragment : Fragment() {
-    private var _binding: FragmentRepositoryAboutBinding? = null
+    private lateinit var binding: FragmentRepositoryAboutBinding
 
-    private val binding get() = _binding!!
     private lateinit var repository: Repository
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentRepositoryAboutBinding.inflate(inflater, container, false)
+        binding = FragmentRepositoryAboutBinding.inflate(inflater, container, false)
         return binding.root
         repositoryAbout(repository)
     }
