@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.RepositoryAboutFragment">
+
+    <TextView
+        android:id="@+id/txt_title_about_repository"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_about_21"
+        android:layout_marginStart="@dimen/title_about_21"
+        android:layout_marginTop="@dimen/title_about_16"
+        android:layout_marginEnd="@dimen/title_about_16"
+        android:text="@string/title_text_about"
+        android:textColor="@color/devpass_black_title_about"
+        android:textSize="@dimen/text_about_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_description_about_repository"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_48"
+        android:layout_marginStart="@dimen/description_about_21"
+        android:layout_marginTop="@dimen/text_about_16"
+        android:layout_marginEnd="@dimen/description_about_21"
+        android:maxLines="3"
+        android:text="@string/description_text_about"
+        android:textColor="@color/devpass_gray_des_about"
+        android:textSize="@dimen/txtSize_about_8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_title_about_repository" />
+</androidx.constraintlayout.widget.ConstraintLayout>
