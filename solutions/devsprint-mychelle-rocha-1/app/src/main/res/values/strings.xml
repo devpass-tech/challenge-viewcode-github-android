@@ -9,4 +9,5 @@
     <string name="previous">Previous</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="avatar_owner_repository">Avatar Owner Repository</string>
+    <string name="view_more">VIEW MORE</string>
 </resources>
