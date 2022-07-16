@@ -7,7 +7,7 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
-        android:layout_height="@dimen/height_218"
+        android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_default"
         android:layout_marginTop="@dimen/margin_default"
         android:layout_marginEnd="@dimen/margin_24dp"
@@ -22,8 +22,8 @@
 
             <ImageView
                 android:id="@+id/ivOwnerAvatar"
-                android:layout_width="@dimen/width_321"
-                android:layout_height="@dimen/height_120"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -35,26 +35,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/margin_default"
                 android:layout_marginTop="@dimen/margin_default"
-                android:textAppearance="@style/TextAppearance.AppCompat.Medium"
-                android:textStyle="bold"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/ivOwnerAvatar"
                 tools:text="Rodrigo Borges" />
 
             <TextView
                 android:id="@+id/tvOwnerBio"
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_marginTop="@dimen/margin_2dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_half"
                 android:layout_marginBottom="@dimen/margin_default"
-                android:layout_marginStart="@dimen/margin_default"
-                android:layout_marginEnd="@dimen/margin_default"
-                android:maxLines="3"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tvOwnerName"
                 app:layout_constraintTop_toBottomOf="@+id/tvOwnerName"
-                tools:text="Mobile Tech Lead Mobile Tech LeadMobile Tech LeadMobile Tech LeadMobile Tech LeadMobile Tech LeadMobile Tech Lead Mobile Tech LeadMobile Tech LeadMobile Tech LeadMobile Tech LeadMobile Tech LeadMobile Tech Lead" />
+                tools:text="Mobile Tech Lead" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
