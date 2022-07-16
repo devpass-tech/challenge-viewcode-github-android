@@ -11,9 +11,7 @@ import com.devpass.githubapp.databinding.RepositoryLicenseFragmentBinding
 
 class RepositoryLicenseFragment : Fragment() {
 
-    private var _binding: RepositoryLicenseFragmentBinding? = null
-
-    private val binding get() = _binding!!
+    private lateinit var binding: RepositoryLicenseFragmentBinding
     private lateinit var license: License
 
     override fun onCreateView(
@@ -21,8 +19,13 @@ class RepositoryLicenseFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = RepositoryLicenseFragmentBinding.inflate(inflater, container, false)
+        binding = RepositoryLicenseFragmentBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        repositoryLicense(license)
     }
 
     private fun repositoryLicense(license: License) {
