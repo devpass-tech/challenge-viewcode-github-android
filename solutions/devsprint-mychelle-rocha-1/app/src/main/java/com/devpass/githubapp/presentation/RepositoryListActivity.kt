@@ -1,12 +1,8 @@
 package com.devpass.githubapp.presentation
 
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuInflater
-import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
-import com.devpass.githubapp.R
 import com.devpass.githubapp.data.api.GitHubEndpoint
 import com.devpass.githubapp.data.model.Repository
 import com.devpass.githubapp.databinding.ActivityMainBinding
@@ -15,9 +11,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-private const val SEARCH_REPOSITORY = "devpass-tech"
-
-class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
+class RepositoryListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -32,32 +26,12 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
-        getListRepository(SEARCH_REPOSITORY)
-    }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.menu_main, menu)
-        val searchView = menu.findItem(R.id.serch_toolbar).actionView as SearchView
-        searchView.setOnQueryTextListener(this)
-        return true
-    }
-
-    override fun onQueryTextSubmit(searchRepository: String?): Boolean {
-        getListRepository(searchRepository)
-        return true
-    }
-
-    override fun onQueryTextChange(searchRepository: String?): Boolean {
-        return true
-    }
-
-    private fun getListRepository(searchToolbar: String?) {
         val retrofitClient = NetworkUtils.getRetrofitInstance("https://api.github.com")
         val endpoint = retrofitClient.create(GitHubEndpoint::class.java)
-        val callback = searchToolbar?.let { endpoint.getRepositories(it) }
+        val callback = endpoint.getRepositories("devpass-tech")
 
-        callback?.enqueue(object : Callback<List<Repository>> {
+        callback.enqueue(object : Callback<List<Repository>> {
             override fun onFailure(call: Call<List<Repository>>, t: Throwable) {
                 Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
             }
@@ -67,13 +41,13 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
                 response: Response<List<Repository>>
             ) {
                 response.body()?.let {
-                    setupListRepositoryAdapter(it)
+                    getListRepository(it)
                 }
             }
         })
     }
 
-    private fun setupListRepositoryAdapter(list: List<Repository>) {
+    private fun getListRepository(list: List<Repository>) {
         binding.repositoryList.rvRepository.adapter = adapter
         adapter.submitList(list)
     }
