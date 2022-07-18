@@ -9,10 +9,7 @@
     <dimen name="margin_12dp">12dp</dimen>
     <dimen name="margin_24dp">24dp</dimen>
     <dimen name="margin_55dp">55dp</dimen>
-    <dimen name="card_width_332dp">332dp</dimen>
-    <dimen name="card_height_144dp">144dp</dimen>
     <dimen name="margin_32dp">32dp</dimen>
     <dimen name="margin_6dp">6dp</dimen>
-
 
 </resources>
