@@ -44,19 +44,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvLicenseName"
                 tools:text="GPL-2.0" />
 
-            <TextView
-                android:id="@+id/tvLicenseViewMore"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/margin_default"
-                android:layout_marginEnd="@dimen/margin_default"
-                android:layout_marginBottom="@dimen/margin_default"
-                android:text="@string/view_more"
-                android:textColor="@color/color_view_more"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/tvLicenseCod"
-                app:layout_constraintTop_toBottomOf="@+id/tvLicenseCod" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

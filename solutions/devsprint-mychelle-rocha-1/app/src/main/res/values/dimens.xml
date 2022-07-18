@@ -11,5 +11,11 @@
     <dimen name="margin_55dp">55dp</dimen>
     <dimen name="margin_32dp">32dp</dimen>
     <dimen name="margin_6dp">6dp</dimen>
+    <dimen name="title_about_21">21dp</dimen>
+    <dimen name="title_about_16">16dp</dimen>
+    <dimen name="text_about_16">16sp</dimen>
+    <dimen name="height_48">48dp</dimen>
+    <dimen name="description_about_21">21dp</dimen>
+    <dimen name="txtSize_about_8">8sp</dimen>
 
 </resources>
