@@ -6,6 +6,8 @@
     <dimen name="margin_default">16dp</dimen>
     <dimen name="margin_half">8dp</dimen>
     <dimen name="margin_2dp">2dp</dimen>
+    <dimen name="margin_12dp">12dp</dimen>
+    <dimen name="margin_24dp">24dp</dimen>
     <dimen name="margin_55dp">55dp</dimen>
     <dimen name="title_about_21">21dp</dimen>
     <dimen name="title_about_16">16dp</dimen>
@@ -13,5 +15,8 @@
     <dimen name="height_48">48dp</dimen>
     <dimen name="description_about_21">21dp</dimen>
     <dimen name="txtSize_about_8">8sp</dimen>
+    <dimen name="width_321">321dp</dimen>
+    <dimen name="height_218">218dp</dimen>
+    <dimen name="height_120">120dp</dimen>
 
 </resources>
