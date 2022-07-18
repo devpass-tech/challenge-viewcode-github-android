@@ -31,12 +31,5 @@ class RepositoryLicenseFragment : Fragment() {
     private fun repositoryLicense(license: License) {
         binding.tvLicenseName.text = license.name
         binding.tvLicenseCod.text = license.key
-        binding.tvLicenseViewMore.setOnClickListener {
-            val intent = Intent(
-                context,
-                "Colocar a activity que o botão está direcionando"::class.java
-            )
-            startActivity(intent)
-        }
     }
 }
