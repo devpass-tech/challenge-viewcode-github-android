@@ -1,3 +1,21 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+
+    //repository_cell_item
+    <dimen name="iv_default_size">40dp</dimen>
+    <dimen name="margin_default">16dp</dimen>
+    <dimen name="margin_half">8dp</dimen>
+    <dimen name="margin_2dp">2dp</dimen>
+    <dimen name="margin_12dp">12dp</dimen>
+    <dimen name="margin_24dp">24dp</dimen>
+    <dimen name="margin_55dp">55dp</dimen>
+    <dimen name="margin_32dp">32dp</dimen>
+    <dimen name="margin_6dp">6dp</dimen>
+    <dimen name="title_about_21">21dp</dimen>
+    <dimen name="title_about_16">16dp</dimen>
+    <dimen name="text_about_16">16sp</dimen>
+    <dimen name="height_48">48dp</dimen>
+    <dimen name="description_about_21">21dp</dimen>
+    <dimen name="txtSize_about_8">8sp</dimen>
+
 </resources>

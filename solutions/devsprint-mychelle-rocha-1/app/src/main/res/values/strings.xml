@@ -8,4 +8,9 @@
     <string name="next">Next</string>
     <string name="previous">Previous</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="avatar_owner_repository">Avatar Owner Repository</string>
+
+    <!--Text About-->
+    <string name="title_text_about">About This Repository</string>
+    <string name="description_text_about">Base project for Devpass Dev Sprints</string>
 </resources>
