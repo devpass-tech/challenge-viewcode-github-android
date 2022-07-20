@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GitHubApp">
         <activity
+            android:name=".RepositoryTabActivity"
+            android:exported="false" />
+        <activity
             android:name=".RepositoryActivity"
             android:exported="false" />
         <activity
