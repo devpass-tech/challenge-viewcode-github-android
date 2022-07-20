@@ -43,7 +43,8 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
     }
 
     override fun onQueryTextSubmit(searchRepository: String?): Boolean {
-        getListRepository(searchRepository)
+        val api = RepositoryApi()
+        api.getListRepository(searchRepository)
         return true
     }
 
@@ -51,26 +52,6 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
         return true
     }
 
-    private fun getListRepository(searchToolbar: String?) {
-
-        val retrofitClient = NetworkUtils.getRetrofitInstance("https://api.github.com")
-        val endpoint = retrofitClient.create(GitHubEndpoint::class.java)
-        val callback = searchToolbar?.let { endpoint.getRepositories(it) }
-        callback?.enqueue(object : Callback<List<Repository>> {
-            override fun onFailure(call: Call<List<Repository>>, t: Throwable) {
-                Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onResponse(
-                call: Call<List<Repository>>,
-                response: Response<List<Repository>>
-            ) {
-                response.body()?.let {
-                    setupListRepositoryAdapter(it)
-                }
-            }
-        })
-    }
 
     private fun setupListRepositoryAdapter(list: List<Repository>) {
         binding.repositoryList.rvRepository.adapter = adapter
