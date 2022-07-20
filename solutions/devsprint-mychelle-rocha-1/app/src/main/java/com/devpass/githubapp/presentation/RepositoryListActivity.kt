@@ -1,6 +1,10 @@
 package com.devpass.githubapp.presentation
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
 import com.devpass.githubapp.data.api.GitHubEndpoint
@@ -24,8 +28,28 @@ class RepositoryListActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         setSupportActionBar(binding.toolbar)
+        getListRepository(SEARCH_REPOSITORY)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_main, menu)
+        val searchView = menu.findItem(R.id.serch_toolbar).actionView as SearchView
+        searchView.setOnQueryTextListener(this)
+        return true
+    }
+
+    override fun onQueryTextSubmit(searchRepository: String?): Boolean {
+        getListRepository(searchRepository)
+        return true
+    }
+
+    override fun onQueryTextChange(searchRepository: String?): Boolean {
+        return true
+    }
+
+    private fun getListRepository(searchToolbar: String?) {
 
         val retrofitClient = NetworkUtils.getRetrofitInstance("https://api.github.com")
         val endpoint = retrofitClient.create(GitHubEndpoint::class.java)
