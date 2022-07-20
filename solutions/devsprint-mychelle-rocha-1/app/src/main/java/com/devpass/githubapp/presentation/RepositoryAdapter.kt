@@ -9,14 +9,14 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
 import com.devpass.githubapp.data.model.Repository
-import com.devpass.githubapp.databinding.RepositoryCellItemBinding
+import com.devpass.githubapp.databinding.RepositoryListItemBinding
 
 class RepositoryAdapter() :
     ListAdapter<Repository, RepositoryAdapter.RepositoryViewHolder>(RepositoryItemDiff()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryViewHolder {
         return RepositoryViewHolder(
-            RepositoryCellItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+            RepositoryListItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         )
     }
 
@@ -24,7 +24,7 @@ class RepositoryAdapter() :
         holder.onBind(currentList[position])
     }
 
-    class RepositoryViewHolder(private val binding: RepositoryCellItemBinding) :
+    class RepositoryViewHolder(private val binding: RepositoryListItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun onBind(repository: Repository) {
             binding.tvRepository.text = repository.name

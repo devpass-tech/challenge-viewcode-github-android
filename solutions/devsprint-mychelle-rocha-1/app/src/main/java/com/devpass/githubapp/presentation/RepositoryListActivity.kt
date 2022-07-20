@@ -6,7 +6,7 @@ import android.view.MenuInflater
 import android.widget.SearchView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import android.widget.Toast
+import com.devpass.githubapp.R
 import com.devpass.githubapp.data.api.GitHubEndpoint
 import com.devpass.githubapp.data.model.Repository
 import com.devpass.githubapp.databinding.ActivityMainBinding
@@ -15,7 +15,9 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RepositoryListActivity : AppCompatActivity() {
+private const val SEARCH_REPOSITORY = "devpass-tech"
+
+class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
     private lateinit var binding: ActivityMainBinding
 
@@ -53,9 +55,8 @@ class RepositoryListActivity : AppCompatActivity() {
 
         val retrofitClient = NetworkUtils.getRetrofitInstance("https://api.github.com")
         val endpoint = retrofitClient.create(GitHubEndpoint::class.java)
-        val callback = endpoint.getRepositories("devpass-tech")
-
-        callback.enqueue(object : Callback<List<Repository>> {
+        val callback = searchToolbar?.let { endpoint.getRepositories(it) }
+        callback?.enqueue(object : Callback<List<Repository>> {
             override fun onFailure(call: Call<List<Repository>>, t: Throwable) {
                 Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
             }
@@ -65,13 +66,13 @@ class RepositoryListActivity : AppCompatActivity() {
                 response: Response<List<Repository>>
             ) {
                 response.body()?.let {
-                    getListRepository(it)
+                    setupListRepository(it)
                 }
             }
         })
     }
 
-    private fun getListRepository(list: List<Repository>) {
+    private fun setupListRepository(list: List<Repository>) {
         binding.repositoryList.rvRepository.adapter = adapter
         adapter.submitList(list)
     }
