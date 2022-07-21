@@ -7,7 +7,7 @@
     tools:context=".presentation.RepositoryTabActivity">
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/tabLayoutDesc"
+        android:id="@+id/tabLayoutRepository"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -22,5 +22,5 @@
         android:layout_marginStart="@dimen/title_about_16"
         android:layout_marginTop="@dimen/title_about_16"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tabLayoutDesc"/>
+        app:layout_constraintTop_toBottomOf="@+id/tabLayoutRepository"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
