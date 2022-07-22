@@ -37,7 +37,7 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.menu_main, menu)
-        val searchView = menu.findItem(R.id.serch_toolbar).actionView as SearchView
+        val searchView = menu.findItem(R.id.search_toolbar).actionView as SearchView
         searchView.setOnQueryTextListener(this)
         return true
     }
@@ -52,7 +52,6 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
     }
 
     private fun getListRepository(searchToolbar: String?) {
-
         val retrofitClient = NetworkUtils.getRetrofitInstance("https://api.github.com")
         val endpoint = retrofitClient.create(GitHubEndpoint::class.java)
         val callback = searchToolbar?.let { endpoint.getRepositories(it) }
