@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/cell_item_padding">
+
+    <ImageView
+        android:id="@+id/imageview_avatar"
+        android:layout_width="@dimen/cell_item_imagemview"
+        android:layout_height="@dimen/cell_item_imagemview"
+        android:contentDescription="@string/avatar_content_description"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:src="@tools:sample/avatars"/>
+
+    <TextView
+        android:id="@+id/textview_repository_name"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/cell_item_textview_margin_start"
+        android:layout_marginTop="@dimen/cell_item_textview_margin_top"
+        android:textSize="@dimen/cell_item_text_repository_name"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/imageview_avatar"
+        tools:text="challenge-github-app"/>
+
+    <TextView
+        android:id="@+id/textview_owner_name"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="@dimen/cell_item_textview_margin_start"
+        android:layout_marginTop="@dimen/cell_item_textview_margin_top"
+        android:textSize="@dimen/cell_item_text_owner_name"
+        app:layout_constraintTop_toBottomOf="@id/textview_repository_name"
+        app:layout_constraintStart_toEndOf="@id/imageview_avatar"
+        tools:text="devpass-tech"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
