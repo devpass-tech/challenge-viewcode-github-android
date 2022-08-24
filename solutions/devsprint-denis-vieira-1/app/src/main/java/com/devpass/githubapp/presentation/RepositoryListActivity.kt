@@ -1,6 +1,9 @@
 package com.devpass.githubapp.presentation
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devpass.githubapp.R
@@ -64,5 +67,25 @@ class RepositoryListActivity : AppCompatActivity() {
         binding.contentList.repositoriesRecyclerview.layoutManager =
             LinearLayoutManager(baseContext, LinearLayoutManager.VERTICAL, false)
         binding.contentList.repositoriesRecyclerview.adapter = cellItemAdapter
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_settings -> {
+                goToSettings()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
+
+    private fun goToSettings() {
+
     }
 }
