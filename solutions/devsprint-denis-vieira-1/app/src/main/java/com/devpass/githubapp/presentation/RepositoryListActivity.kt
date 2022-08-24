@@ -63,5 +63,4 @@ class RepositoryListActivity : AppCompatActivity() {
     private fun goToSettings() {
 
     }
-
 }
