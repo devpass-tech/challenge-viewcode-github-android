@@ -8,7 +8,7 @@ import com.devpass.githubapp.databinding.ItemCellRepositoryBinding
 
 class RepositoryListAdapter : RecyclerView.Adapter<RepositoryCellItem>() {
 
-    private val repositories: List<Repository> = listOf()
+    var repositories: List<Repository> = listOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryCellItem {
         val inflater = LayoutInflater.from(parent.context)

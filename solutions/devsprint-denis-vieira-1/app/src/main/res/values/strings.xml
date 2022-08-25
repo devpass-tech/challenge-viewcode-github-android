@@ -9,4 +9,6 @@
     <string name="previous">Previous</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="avatar_content_description">The image shows the repository avatar</string>
+    <string name="snackbar_error">An error occurred while trying to get the list</string>
+    <string name="retry">Retry</string>
 </resources>
