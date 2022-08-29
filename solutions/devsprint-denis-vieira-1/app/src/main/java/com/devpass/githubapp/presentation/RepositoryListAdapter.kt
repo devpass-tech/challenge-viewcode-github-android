@@ -9,6 +9,7 @@ import com.devpass.githubapp.databinding.ItemCellRepositoryBinding
 class RepositoryListAdapter : RecyclerView.Adapter<RepositoryCellItem>() {
 
     var repositories: List<Repository> = listOf()
+    var repositoryItemListener: RepositoryItemListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryCellItem {
         val inflater = LayoutInflater.from(parent.context)
@@ -18,9 +19,12 @@ class RepositoryListAdapter : RecyclerView.Adapter<RepositoryCellItem>() {
 
     override fun onBindViewHolder(holder: RepositoryCellItem, position: Int) {
         val item = repositories[position]
-        holder.bind(item)
+        holder.bind(item, repositoryItemListener)
     }
 
     override fun getItemCount(): Int = repositories.size
 
+    interface RepositoryItemListener {
+        fun onItemClick()
+    }
 }

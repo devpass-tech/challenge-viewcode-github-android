@@ -10,8 +10,8 @@ class RepositoryCellItem(
     private val binding: ItemCellRepositoryBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(item: Repository) {
-        with(binding){
+    fun bind(item: Repository, itemListener: RepositoryListAdapter.RepositoryItemListener?) {
+        with(binding) {
             textviewRepositoryName.text = item.name
             textviewOwnerName.text = item.owner.login
 
@@ -21,6 +21,10 @@ class RepositoryCellItem(
                 .centerCrop()
                 .placeholder(R.drawable.ic_placeholder)
                 .into(imageviewAvatar)
+
+            root.setOnClickListener {
+                itemListener?.onItemClick()
+            }
         }
     }
 }
