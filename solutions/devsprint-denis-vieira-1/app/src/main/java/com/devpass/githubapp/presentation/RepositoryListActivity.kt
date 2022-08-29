@@ -1,5 +1,6 @@
 package com.devpass.githubapp.presentation
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
@@ -16,7 +17,7 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class RepositoryListActivity : AppCompatActivity() {
+class RepositoryListActivity : AppCompatActivity(), RepositoryListAdapter.RepositoryItemListener {
 
     private lateinit var binding: ActivityMainBinding
     private val cellItemAdapter = RepositoryListAdapter()
@@ -64,6 +65,8 @@ class RepositoryListActivity : AppCompatActivity() {
     }
 
     private fun setupLayout() {
+        cellItemAdapter.repositoryItemListener = this
+
         binding.contentList.repositoriesRecyclerview.layoutManager =
             LinearLayoutManager(baseContext, LinearLayoutManager.VERTICAL, false)
         binding.contentList.repositoriesRecyclerview.adapter = cellItemAdapter
@@ -87,5 +90,10 @@ class RepositoryListActivity : AppCompatActivity() {
 
     private fun goToSettings() {
 
+    }
+
+    override fun onItemClick() {
+        val intent = Intent(this, RepositoryDetailsActivity::class.java)
+        startActivity(intent)
     }
 }
