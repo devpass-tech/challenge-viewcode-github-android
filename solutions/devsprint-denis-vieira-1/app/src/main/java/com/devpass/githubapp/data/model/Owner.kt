@@ -1,6 +1,7 @@
 package com.devpass.githubapp.data.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Owner(
     @SerializedName("login")
@@ -9,4 +10,4 @@ data class Owner(
     var avatarUrl : String,
     @SerializedName("url")
     var url : String
-)
+) : Serializable

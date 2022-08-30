@@ -23,7 +23,7 @@ class RepositoryCellItem(
                 .into(imageviewAvatar)
 
             root.setOnClickListener {
-                itemListener?.onItemClick()
+                itemListener?.onItemClick(item)
             }
         }
     }
