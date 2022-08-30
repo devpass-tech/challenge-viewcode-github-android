@@ -1,6 +1,7 @@
 package com.devpass.githubapp.data.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class License(
     @SerializedName("name")
@@ -9,4 +10,4 @@ data class License(
     var key : String,
     @SerializedName("url")
     var url : String
-)
+) : Serializable

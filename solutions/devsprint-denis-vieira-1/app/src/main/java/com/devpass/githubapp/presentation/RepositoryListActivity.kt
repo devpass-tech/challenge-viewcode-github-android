@@ -92,8 +92,10 @@ class RepositoryListActivity : AppCompatActivity(), RepositoryListAdapter.Reposi
 
     }
 
-    override fun onItemClick() {
-        val intent = Intent(this, RepositoryDetailsActivity::class.java)
+    override fun onItemClick(repository: Repository) {
+        val intent = Intent(this, RepositoryDetailsActivity::class.java).apply {
+            putExtra(RepositoryDetailsActivity.ARG_REPOSITORY, repository)
+        }
         startActivity(intent)
     }
 }

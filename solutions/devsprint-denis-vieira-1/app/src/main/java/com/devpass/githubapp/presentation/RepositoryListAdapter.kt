@@ -25,6 +25,6 @@ class RepositoryListAdapter : RecyclerView.Adapter<RepositoryCellItem>() {
     override fun getItemCount(): Int = repositories.size
 
     interface RepositoryItemListener {
-        fun onItemClick()
+        fun onItemClick(repository: Repository)
     }
 }

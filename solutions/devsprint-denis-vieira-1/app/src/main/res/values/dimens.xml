@@ -6,4 +6,9 @@
     <dimen name="cell_item_textview_margin_top">8dp</dimen>
     <dimen name="cell_item_text_repository_name">18sp</dimen>
     <dimen name="cell_item_text_owner_name">14sp</dimen>
+    <dimen name="margin">16dp</dimen>
+    <dimen name="margin_top">8dp</dimen>
+    <dimen name="textsize_repository_name">24sp</dimen>
+    <dimen name="textsize_repository_stars_forks">16sp</dimen>
+    <dimen name="imageview_height">184dp</dimen>
 </resources>

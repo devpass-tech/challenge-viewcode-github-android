@@ -1,6 +1,7 @@
 package com.devpass.githubapp.data.model
 
 import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 data class Repository(
     @SerializedName("name")
@@ -15,4 +16,4 @@ data class Repository(
     var owner : Owner,
     @SerializedName("license")
     var license : License
-)
+) : Serializable
