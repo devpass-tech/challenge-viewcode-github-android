@@ -11,4 +11,7 @@
     <dimen name="textsize_repository_name">24sp</dimen>
     <dimen name="textsize_repository_stars_forks">16sp</dimen>
     <dimen name="imageview_height">184dp</dimen>
+    <dimen name="margin_secondary">24dp</dimen>
+    <dimen name="textsize_about">16sp</dimen>
+    <dimen name="textsize_description">12sp</dimen>
 </resources>
