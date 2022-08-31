@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
+import com.devpass.githubapp.R
 import com.devpass.githubapp.data.model.Repository
-import com.devpass.githubapp.databinding.FragmentRepositoryAboutBinding
+import com.devpass.githubapp.databinding.FragmentRepositoryOwnerBinding
 
-class RepositoryAboutFragment : Fragment() {
+class RepositoryOwnerFragment : Fragment() {
 
-    private var _binding: FragmentRepositoryAboutBinding? = null
+    private var _binding: FragmentRepositoryOwnerBinding? = null
     private val binding
         get() = _binding!!
 
@@ -20,10 +22,11 @@ class RepositoryAboutFragment : Fragment() {
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentRepositoryAboutBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentRepositoryOwnerBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -31,8 +34,15 @@ class RepositoryAboutFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         with(binding) {
-            textviewAboutRepository.text = repository?.name
-            textviewDescriptionAboutRepository.text = repository?.description
+            textviewRepositoryOwnerName.text = repository?.owner?.login
+            textviewRepositoryOwnerBio.text = repository?.owner?.url
+
+            Glide
+                .with(root.context)
+                .load(repository?.owner?.avatarUrl)
+                .centerCrop()
+                .placeholder(R.drawable.ic_placeholder)
+                .into(imageviewRepositoryOwner)
         }
     }
 
@@ -42,8 +52,8 @@ class RepositoryAboutFragment : Fragment() {
     }
 
     companion object {
-        fun getInstance(repository: Repository): RepositoryAboutFragment {
-            return RepositoryAboutFragment().apply {
+        fun getInstance(repository: Repository): RepositoryOwnerFragment {
+            return RepositoryOwnerFragment().apply {
                 arguments = bundleOf(RepositoryDetailsActivity.ARG_REPOSITORY to repository)
             }
         }

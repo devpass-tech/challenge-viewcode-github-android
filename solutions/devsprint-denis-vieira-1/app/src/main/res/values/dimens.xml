@@ -7,11 +7,13 @@
     <dimen name="cell_item_text_repository_name">18sp</dimen>
     <dimen name="cell_item_text_owner_name">14sp</dimen>
     <dimen name="margin">16dp</dimen>
-    <dimen name="margin_top">8dp</dimen>
+    <dimen name="margin_half">8dp</dimen>
     <dimen name="textsize_repository_name">24sp</dimen>
     <dimen name="textsize_repository_stars_forks">16sp</dimen>
     <dimen name="imageview_height">184dp</dimen>
     <dimen name="margin_secondary">24dp</dimen>
-    <dimen name="textsize_about">16sp</dimen>
-    <dimen name="textsize_description">12sp</dimen>
+    <dimen name="title">16sp</dimen>
+    <dimen name="subtitle">12sp</dimen>
+    <dimen name="padding_default">12dp</dimen>
+    <dimen name="card_corner_radius">5dp</dimen>
 </resources>
