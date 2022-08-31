@@ -24,4 +24,10 @@
         <item quantity="one">%d fork</item>
         <item quantity="other">%d forks</item>
     </plurals>
+    
+    <string name="text_about">About this repository</string>
+    <string name="description_text_about">Base project for Devpass Dev Sprints</string>
+    <string name="title_about">ABOUT</string>
+    <string name="title_owner">OWNER</string>
+    <string name="title_license">LICENSE</string>
 </resources>

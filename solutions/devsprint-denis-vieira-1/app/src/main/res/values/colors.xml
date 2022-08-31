@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="devpass_blue">#FF5084C1</color>
+    <color name="devpass_black_title_about">#212121</color>
+    <color name="devpass_gray_des_about">#757575</color>
 </resources>

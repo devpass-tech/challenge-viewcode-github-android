@@ -11,11 +11,12 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/imageview_height"
         android:scaleType="centerCrop"
+        android:contentDescription="@string/avatar_content_description"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
+        tools:src="@tools:sample/avatars"/>
 
     <TextView
         android:id="@+id/textview_repository_name"
@@ -27,6 +28,8 @@
         android:textSize="@dimen/textsize_repository_name"
         android:textStyle="bold"
         android:textColor="@color/black"
+        android:maxLines="1"
+        android:ellipsize="end"
         app:layout_constraintTop_toBottomOf="@id/imageview_repository"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,11 +55,37 @@
         android:layout_marginStart="@dimen/margin"
         android:layout_marginTop="@dimen/margin_top"
         android:layout_marginEnd="@dimen/margin"
-        android:layout_marginBottom="@dimen/margin"
+        android:paddingBottom="@dimen/margin"
         android:textSize="@dimen/textsize_repository_stars_forks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textview_repository_stars"
+        tools:text="17 forks" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_repository_details"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:text="17 forks"/>
+        app:layout_constraintTop_toBottomOf="@id/textview_repository_forks">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_about" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_owner" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title_license" />
+
+    </com.google.android.material.tabs.TabLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
