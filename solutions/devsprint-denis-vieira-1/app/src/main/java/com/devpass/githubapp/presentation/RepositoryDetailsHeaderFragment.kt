@@ -9,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.devpass.githubapp.R
 import com.devpass.githubapp.data.model.Repository
 import com.devpass.githubapp.databinding.FragmentRepositoryDetailsHeaderBinding
+import com.google.android.material.tabs.TabLayoutMediator
 
 class RepositoryDetailsHeaderFragment : Fragment() {
 
@@ -30,28 +31,54 @@ class RepositoryDetailsHeaderFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        with (binding) {
-            val stars = repository?.stargazersCount ?: 0
-            val forks = repository?.forksCount ?: 0
-
-            textviewRepositoryName.text = repository?.name
-            textviewRepositoryStars.text =
-                resources.getQuantityString(R.plurals.plural_name_repo_stars, stars, stars)
-            textviewRepositoryForks.text =
-                resources.getQuantityString(R.plurals.plural_name_repo_forks, forks, forks)
-
-            Glide
-                .with(root.context)
-                .load(repository?.owner?.avatarUrl)
-                .centerCrop()
-                .placeholder(R.drawable.ic_placeholder)
-                .into(imageviewRepository)
-        }
+        setupAvatarImage()
+        setupHeader()
+        setupTabs()
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun setupHeader() {
+        repository?.let {
+            val stars = it.stargazersCount
+            val forks = it.forksCount
+
+            with(binding) {
+                textviewRepositoryName.text = it.name
+                textviewRepositoryStars.text =
+                    resources.getQuantityString(R.plurals.plural_name_repo_stars, stars, stars)
+                textviewRepositoryForks.text =
+                    resources.getQuantityString(R.plurals.plural_name_repo_forks, forks, forks)
+            }
+        }
+    }
+
+    private fun setupAvatarImage() {
+        repository?.let {
+            Glide
+                .with(binding.root.context)
+                .load(it.owner.avatarUrl)
+                .centerCrop()
+                .placeholder(R.drawable.ic_placeholder)
+                .into(binding.imageviewRepository)
+        }
+    }
+
+    private fun setupTabs() {
+        repository?.let {
+            binding.pager.adapter = TabAdapter(this, it)
+
+            TabLayoutMediator(binding.tabRepositoryDetails, binding.pager) { tab, position ->
+                tab.text = when(position) {
+                    0 -> resources.getString(R.string.title_about)
+                    1 -> resources.getString(R.string.title_owner)
+                    2 -> resources.getString(R.string.title_license)
+                    else -> ""
+                }
+            }.attach()
+        }
     }
 }

@@ -27,7 +27,7 @@
         android:layout_marginEnd="@dimen/margin"
         android:textSize="@dimen/textsize_repository_name"
         android:textStyle="bold"
-        android:textColor="@color/black"
+        android:textColor="@color/devpass_black_title"
         android:maxLines="1"
         android:ellipsize="end"
         app:layout_constraintTop_toBottomOf="@id/imageview_repository"
@@ -40,9 +40,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin"
-        android:layout_marginTop="@dimen/margin_top"
+        android:layout_marginTop="@dimen/margin_half"
         android:layout_marginEnd="@dimen/margin"
         android:textSize="@dimen/textsize_repository_stars_forks"
+        android:textColor="@color/devpass_gray_subtitle"
         app:layout_constraintTop_toBottomOf="@id/textview_repository_name"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,10 +54,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin"
-        android:layout_marginTop="@dimen/margin_top"
+        android:layout_marginTop="@dimen/margin_half"
         android:layout_marginEnd="@dimen/margin"
         android:paddingBottom="@dimen/margin"
         android:textSize="@dimen/textsize_repository_stars_forks"
+        android:textColor="@color/devpass_gray_subtitle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,27 +67,20 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_repository_details"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textview_repository_forks">
+        app:layout_constraintTop_toBottomOf="@id/textview_repository_forks"/>
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title_about" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title_owner" />
-
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/title_license" />
-
-    </com.google.android.material.tabs.TabLayout>
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/tab_repository_details"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

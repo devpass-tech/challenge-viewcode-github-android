@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".presentation.RepositoryLicenseFragment">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/margin"
+        android:layout_marginStart="@dimen/margin_secondary"
+        android:layout_marginEnd="@dimen/margin_secondary"
+        app:cardElevation="@dimen/margin"
+        app:cardCornerRadius="@dimen/card_corner_radius">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textview_repository_license_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/title"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                android:textColor="@color/devpass_black_title"
+                android:paddingHorizontal="@dimen/padding_default"
+                android:paddingTop="@dimen/padding_default"
+                tools:text="GNU General Public License"/>
+
+            <TextView
+                android:id="@+id/textview_repository_license_key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_half"
+                android:layout_marginBottom="@dimen/margin"
+                android:paddingHorizontal="@dimen/padding_default"
+                android:textColor="@color/devpass_gray_subtitle"
+                android:textSize="@dimen/subtitle"
+                tools:text="GPL-2.0"/>
+
+            <Button
+                android:id="@+id/button_viewmore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:textColor="@color/devpass_blue"
+                android:background="@android:color/transparent"
+                android:text="@string/view_more"
+                tools:text="VIEW MORE"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

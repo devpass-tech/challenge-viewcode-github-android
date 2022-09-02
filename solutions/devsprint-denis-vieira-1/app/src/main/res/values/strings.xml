@@ -30,4 +30,5 @@
     <string name="title_about">ABOUT</string>
     <string name="title_owner">OWNER</string>
     <string name="title_license">LICENSE</string>
+    <string name="view_more">VIEW MORE</string>
 </resources>
