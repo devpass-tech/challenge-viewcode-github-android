@@ -11,11 +11,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GitHubApp">
-        <activity
-            android:name=".presentation.RepositoryDetails"
-            android:exported="false"
-            android:label="@string/title_activity_repository_details"
-            android:theme="@style/Theme.GitHubApp.NoActionBar" />
+<!--        <activity-->
+<!--            android:name=".presentation.RepositoryDetails"-->
+<!--            android:exported="false"-->
+<!--            android:label="@string/title_activity_repository_details"-->
+<!--            android:theme="@style/Theme.GitHubApp.NoActionBar" />-->
         <activity
             android:name=".presentation.RepositoryListActivity"
             android:exported="true"
