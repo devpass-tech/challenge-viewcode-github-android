@@ -8,6 +8,7 @@ import android.widget.Toast
 import com.devpass.githubapp.data.api.GitHubEndpoint
 import com.devpass.githubapp.data.model.Repository
 import com.devpass.githubapp.databinding.ActivityMainBinding
+import com.devpass.githubapp.databinding.SettingsActivityBinding
 import com.devpass.githubapp.utils.NetworkUtils
 import retrofit2.Call
 import retrofit2.Callback
@@ -15,15 +16,16 @@ import retrofit2.Response
 
 class RepositoryListActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding:SettingsActivityBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = SettingsActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
+        setSupportActionBar(binding.toolbarSettings)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val retrofitClient = NetworkUtils.getRetrofitInstance("https://api.github.com")
         val endpoint = retrofitClient.create(GitHubEndpoint::class.java)
