@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.RepositoryListActivity" >
+    tools:context=".presentation.RepositoryListActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarSettings"
@@ -37,7 +37,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:text="App Information"
+            android:text="@string/app_information"
             android:textColor="@color/black"
             android:textSize="20sp" />
 
@@ -53,7 +53,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:layout_weight="1"
-                android:text="Version"
+                android:text="@string/version"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
 
             <TextView
@@ -62,16 +63,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:layout_weight="1"
-                android:text="1.0.0"
+                android:text="@string/_1_0_0"
                 android:textAlignment="textEnd"
+                android:textColor="#716F6F"
                 android:textSize="20sp" />
 
         </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:background="#CCCCCC"
-        android:layout_height="2dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="16dp"
+            android:background="#CCCCCC" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -85,7 +88,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:layout_weight="1"
-                android:text="Build"
+                android:text="@string/build"
+                android:textColor="@color/black"
                 android:textSize="20sp" />
 
             <TextView
@@ -94,11 +98,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:layout_weight="1"
-                android:text="55"
+                android:text="@string/_55"
                 android:textAlignment="textEnd"
+                android:textColor="#716F6F"
                 android:textSize="20sp" />
 
         </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="16dp"
+            android:background="#CCCCCC" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

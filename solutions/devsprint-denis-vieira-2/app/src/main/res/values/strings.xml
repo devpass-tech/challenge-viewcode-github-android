@@ -9,4 +9,9 @@
     <string name="previous">Previous</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="app_information">App Information</string>
+    <string name="version">Version</string>
+    <string name="build">Build</string>
+    <string name="_55">55</string>
+    <string name="_1_0_0">1.0.0</string>
 </resources>
