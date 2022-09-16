@@ -12,9 +12,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GitHubApp">
         <activity
-            android:name=".RepositoryCellItemActivity"
-            android:exported="false" />
-        <activity
             android:name=".presentation.RepositoryDetails"
             android:exported="false"
             android:label="@string/title_activity_repository_details"
