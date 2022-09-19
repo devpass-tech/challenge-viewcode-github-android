@@ -16,7 +16,15 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:popupTheme="@style/Theme.GitHubApp.PopupOverlay" />
+            app:title="@string/repositories"
+            app:popupTheme="@style/Theme.GitHubApp.PopupOverlay">
+            <ImageView
+                android:src="@drawable/ic_search"
+                android:layout_width="17.49dp"
+                android:layout_height="17.49dp"
+                android:layout_gravity="end"/>
+
+        </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
 
