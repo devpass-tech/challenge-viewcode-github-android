@@ -12,20 +12,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GitHubApp">
         <activity
-            android:name=".presentation.RepositoryDetails"
-            android:exported="false"
-            android:label="@string/title_activity_repository_details"
-            android:theme="@style/Theme.GitHubApp.NoActionBar" />
+            android:name=".presentation.SettingsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/Theme.GitHubApp.NoActionBar">
+
+        </activity>
         <activity
             android:name=".presentation.RepositoryListActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.GitHubApp.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            
         </activity>
     </application>
 
