@@ -11,6 +11,10 @@ import android.view.Menu
 import android.view.View
 import androidx.core.content.ContextCompat
 import androidx.core.content.res.ResourcesCompat
+import android.view.MenuInflater
+import android.view.MenuItem
+import android.widget.SearchView
+import androidx.navigation.ui.AppBarConfiguration
 import com.devpass.githubapp.R
 import com.devpass.githubapp.data.api.GitHubEndpoint
 import com.devpass.githubapp.data.model.Repository
@@ -33,6 +37,7 @@ class RepositoryListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+
 
         val retrofitClient = NetworkUtils.getRetrofitInstance("https://api.github.com")
         val endpoint = retrofitClient.create(GitHubEndpoint::class.java)
@@ -99,6 +104,17 @@ class RepositoryListActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_main, menu)
 
         return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.action_settings -> {
+                val intent = Intent(this, SettingsActivity::class.java )
+                startActivity(intent)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
  
 }
