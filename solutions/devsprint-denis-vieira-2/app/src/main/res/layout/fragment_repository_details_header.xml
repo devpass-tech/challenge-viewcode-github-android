@@ -9,7 +9,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
+        android:id="@+id/cardDetailsHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,6 +23,7 @@
 
             <!-- Media -->
             <ImageView
+                android:id="@+id/logoDetailsHeader"
                 android:layout_width="match_parent"
                 android:layout_height="144dp"
                 android:contentDescription="content_description_logo"
@@ -36,6 +37,7 @@
 
                 <!-- Title, secondary and supporting text -->
                 <TextView
+                    android:id="@+id/nomeDetailsHeader"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/title"
@@ -45,6 +47,7 @@
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
                 <TextView
+                    android:id="@+id/start"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="11dp"
@@ -54,6 +57,7 @@
                     android:textColor="@color/black_02" />
 
                 <TextView
+                    android:id="@+id/forks"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
