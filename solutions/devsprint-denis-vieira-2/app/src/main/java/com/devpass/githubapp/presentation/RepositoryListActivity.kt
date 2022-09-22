@@ -7,10 +7,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devpass.githubapp.adapter.ListAdapter 
 import android.view.Menu
-import android.widget.SearchView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.ui.AppBarConfiguration
-import android.widget.Toast
 import com.devpass.githubapp.R
 import com.devpass.githubapp.data.api.GitHubEndpoint
 import com.devpass.githubapp.data.model.Repository
