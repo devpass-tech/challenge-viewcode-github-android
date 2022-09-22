@@ -7,38 +7,21 @@
     tools:context=".presentation.RepositoryListActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/Theme.GitHubApp.AppBarOverlay"
-        >
+        android:theme="@style/Theme.GitHubApp.AppBarOverlay">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:title="@string/repositories"
-            app:popupTheme="@style/Theme.GitHubApp.PopupOverlay">
-            <ImageView
-                android:src="@drawable/ic_search"
-                android:layout_width="17.49dp"
-                android:layout_height="17.49dp"
-                android:layout_gravity="end"
-                />
+            app:popupTheme="@style/Theme.GitHubApp.PopupOverlay"
+            app:title="@string/repositories">
+
         </androidx.appcompat.widget.Toolbar>
 
     </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvlist"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="55dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:itemCount="6"
-        tools:listitem="@layout/repository_cell_item" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
