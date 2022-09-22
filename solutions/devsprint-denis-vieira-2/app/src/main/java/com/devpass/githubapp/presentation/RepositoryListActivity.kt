@@ -7,16 +7,11 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devpass.githubapp.adapter.ListAdapter 
 import android.view.Menu
-import android.widget.SearchView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.ui.AppBarConfiguration
-import android.widget.Toast
 import com.devpass.githubapp.R
 import com.devpass.githubapp.data.api.GitHubEndpoint
 import com.devpass.githubapp.data.model.Repository
 import com.devpass.githubapp.data.model.RepositoryAdapter
 import com.devpass.githubapp.databinding.ActivityMainBinding
-import com.devpass.githubapp.databinding.SettingsActivityBinding
 import com.devpass.githubapp.utils.NetworkUtils
 import retrofit2.Call
 import retrofit2.Callback
@@ -83,7 +78,7 @@ class RepositoryListActivity : AppCompatActivity() {
             )
         )
 
-        //Configuração do RecyclerView. Vvvverificar context
+        //Configuração do RecyclerView.
         val adapter = ListAdapter(context = baseContext)
         binding.rvlist.layoutManager = LinearLayoutManager(baseContext)
         binding.rvlist.adapter = adapter
