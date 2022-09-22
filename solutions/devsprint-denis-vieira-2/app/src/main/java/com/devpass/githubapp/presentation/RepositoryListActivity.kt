@@ -8,6 +8,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.devpass.githubapp.adapter.ListAdapter 
 import android.view.Menu
+import android.view.View
+import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.SearchView
@@ -17,11 +20,11 @@ import com.devpass.githubapp.data.api.GitHubEndpoint
 import com.devpass.githubapp.data.model.Repository
 import com.devpass.githubapp.data.model.RepositoryAdapter
 import com.devpass.githubapp.databinding.ActivityMainBinding
-import com.devpass.githubapp.databinding.SettingsActivityBinding
 import com.devpass.githubapp.utils.NetworkUtils
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+
 
 class RepositoryListActivity : AppCompatActivity() {
 
@@ -34,7 +37,6 @@ class RepositoryListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
-        binding.toolbar
 
 
         val retrofitClient = NetworkUtils.getRetrofitInstance("https://api.github.com")
@@ -86,7 +88,10 @@ class RepositoryListActivity : AppCompatActivity() {
         )
 
         //Configuração do RecyclerView. Vvvverificar context
-        val adapter = ListAdapter(context = baseContext)
+        val adapter = ListAdapter(context = baseContext) {
+            val intent = Intent(this, RepositoryDetailsActivity::class.java)
+            startActivity(intent)
+        }
         binding.rvlist.layoutManager = LinearLayoutManager(baseContext)
         binding.rvlist.adapter = adapter
         binding.rvlist.setHasFixedSize(true)

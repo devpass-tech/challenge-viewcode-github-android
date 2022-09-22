@@ -8,7 +8,7 @@ import com.bumptech.glide.Glide
 import com.devpass.githubapp.data.model.RepositoryAdapter
 import com.devpass.githubapp.databinding.RepositoryCellItemBinding
 
-class ListAdapter (private val context: Context):
+class ListAdapter (private val context: Context, private val onClickItem: () -> Unit ):
     RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
 
     private var listRepository = emptyList<RepositoryAdapter>()
@@ -33,6 +33,9 @@ class ListAdapter (private val context: Context):
             val repository = listRepository[position]
 
             viewHolder.binding.title.text = repository.nome
+            viewHolder.itemView.setOnClickListener {
+                onClickItem()
+            }
             viewHolder.binding.subtitle.text = repository.subNome
             Glide.with(context)
                 .load(repository.imagem)
