@@ -38,6 +38,13 @@ class RepositoryListActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
+        /*binding.toolbar.navigationIcon = ResourcesCompat.getDrawable(resources, R.drawable.ic_seta, null);
+        binding.toolbar.setNavigationOnClickListener {
+
+            finish()
+
+        }*/
+
 
         val retrofitClient = NetworkUtils.getRetrofitInstance("https://api.github.com")
         val endpoint = retrofitClient.create(GitHubEndpoint::class.java)
@@ -117,5 +124,7 @@ class RepositoryListActivity : AppCompatActivity() {
             else -> super.onOptionsItemSelected(item)
         }
     }
+
+
  
 }
