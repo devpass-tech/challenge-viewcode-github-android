@@ -8,14 +8,17 @@
 
     <!-- TODO: Update blank fragment layout -->
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
+        android:id="@+id/cardOwner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/fourth_margin"
+        app:cardBackgroundColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/layoutOwner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -24,7 +27,7 @@
             <ImageView
                 android:id="@+id/imageOwner"
                 android:layout_width="match_parent"
-                android:layout_height="144dp"
+                android:layout_height="@dimen/layout_height_Header"
                 android:contentDescription="content_description_logo"
                 android:scaleType="centerCrop"
                 android:src="@drawable/image_owner" />
@@ -33,19 +36,20 @@
                 android:id="@+id/nomeOwner"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14.93dp"
-                android:layout_marginTop="11.99dp"
-                android:text="Rodrigo Borges"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/fourth_margin"
+                android:text="@string/nome_owner"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 android:textStyle="bold" />
 
             <LinearLayout
+                android:id="@+id/layoutSubNomeOwner"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="14.93dp"
-                android:layout_marginTop="11.85dp"
-                android:layout_marginEnd="14.93dp"
-                android:layout_marginBottom="14.39dp"
+                android:layout_marginStart="@dimen/default_margin"
+                android:layout_marginTop="@dimen/fourth_margin"
+                android:layout_marginEnd="@dimen/default_margin"
+                android:layout_marginBottom="@dimen/default_margin"
                 android:orientation="vertical">
 
                 <!-- Title, secondary and supporting text -->
@@ -55,7 +59,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:maxLines="3"
-                    android:text="Mobile Tech Lead"
+                    android:text="@string/sub_nome_owner"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="@color/gray" />
 

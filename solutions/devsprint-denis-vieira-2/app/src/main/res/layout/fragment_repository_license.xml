@@ -11,7 +11,7 @@
         android:id="@+id/cardLicense"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="12dp"
+        app:cardCornerRadius="@dimen/fourth_margin"
         app:cardBackgroundColor="@color/white"
         android:layout_marginTop="@dimen/default_margin"
         android:layout_marginStart="@dimen/first_margin"
