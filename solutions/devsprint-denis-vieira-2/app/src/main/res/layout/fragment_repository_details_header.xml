@@ -17,6 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/linearPrincipalHeader"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
@@ -25,12 +26,13 @@
             <ImageView
                 android:id="@+id/logoDetailsHeader"
                 android:layout_width="match_parent"
-                android:layout_height="144dp"
-                android:contentDescription="content_description_logo"
+                android:layout_height="@dimen/layout_height_Header"
+                android:contentDescription="@string/content_description_logo"
                 android:scaleType="centerCrop"
                 app:srcCompat="@drawable/devpass_logo" />
 
             <LinearLayout
+                android:id="@+id/layoutPrincipalHeader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical" >
@@ -41,8 +43,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/title"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginStart="19dp"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:layout_marginStart="@dimen/second_margin"
                     android:textStyle="bold"
                     android:textAppearance="?attr/textAppearanceHeadline6" />
 
@@ -50,9 +52,9 @@
                     android:id="@+id/start"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="11dp"
-                    android:layout_marginStart="21dp"
-                    android:text="5 stars"
+                    android:layout_marginTop="@dimen/fourth_margin"
+                    android:layout_marginStart="@dimen/second_margin"
+                    android:text="@string/quantidade_stars"
                     android:textAppearance="?attr/textAppearanceBody2"
                     android:textColor="@color/black_02" />
 
@@ -60,40 +62,14 @@
                     android:id="@+id/forks"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="@dimen/fifth_margin"
+                    android:layout_marginStart="@dimen/second_margin"
                     android:textColor="@color/black_02"
-                    android:text="17 forks"
+                    android:text="@string/quantidade_forks"
                     android:textAppearance="?attr/textAppearanceBody2"
                      />
 
             </LinearLayout>
-
-            <!-- Buttons -->
-                <com.google.android.material.tabs.TabLayout
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="16dp" >
-
-                    <com.google.android.material.tabs.TabItem
-                        android:id="@+id/tiabout"
-                        android:layout_height="match_parent"
-                        android:layout_width="match_parent"
-                        android:text="ABOUT"/>
-
-                    <com.google.android.material.tabs.TabItem
-                        android:id="@+id/tiowner"
-                        android:layout_height="match_parent"
-                        android:layout_width="match_parent"
-                        android:text="OWNER"/>
-
-                    <com.google.android.material.tabs.TabItem
-                        android:id="@+id/tilicense"
-                        android:layout_height="match_parent"
-                        android:layout_width="match_parent"
-                        android:text="LICENSE"/>
-
-                </com.google.android.material.tabs.TabLayout>
 
     </LinearLayout>
 

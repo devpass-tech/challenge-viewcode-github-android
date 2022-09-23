@@ -15,42 +15,45 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
+            android:id="@+id/layoutPrincipalAbout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
 
         <LinearLayout
+            android:id="@+id/layoutNomeAbout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginTop="16dp"
-            android:layout_marginStart="21dp"
+            android:layout_marginTop="@dimen/default_margin"
+            android:layout_marginStart="@dimen/second_margin"
             >
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/nomeAbout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="About This Repository"
+        android:text="@string/about_repository"
         android:textColor="@color/black"
-        android:textSize="20dp" />
+        android:textSize="@dimen/second_margin" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/layoutSubNomeAbout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="11dp"
+        android:layout_marginStart="@dimen/second_margin"
+        android:layout_marginTop="@dimen/fifth_margin"
+        android:layout_marginEnd="@dimen/fourth_margin"
         android:orientation="vertical">
 
         <TextView
+            android:id="@+id/nomeSubNomeAbout"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:maxLines="3"
-            android:text="Base project for Devpass' Dev Sprints." />
+            android:text="@string/titulo_sub_nome_about" />
 
     </LinearLayout>
         </LinearLayout>

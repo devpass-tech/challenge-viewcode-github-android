@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.RepositoryDetailTabsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <!-- Buttons -->
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabsButtonsDetail"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/default_margin" >
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tiabout"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:text="@string/tabitem_about"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tiowner"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:text="@string/tabitem_owner"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/tilicense"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:text="@string/tabitem_license"/>
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</FrameLayout>
