@@ -14,6 +14,7 @@ import androidx.core.content.res.ResourcesCompat
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.SearchView
+import androidx.core.view.isVisible
 import androidx.navigation.ui.AppBarConfiguration
 import com.devpass.githubapp.R
 import com.devpass.githubapp.data.api.GitHubEndpoint
@@ -52,6 +53,8 @@ class RepositoryListActivity : AppCompatActivity() {
         val endpoint = retrofitClient.create(GitHubEndpoint::class.java)
         val callback = endpoint.getRepositories("devpass-tech")
 
+        binding.progressBar.isVisible = true
+
         callback.enqueue(object : Callback<List<Repository>> {
             override fun onFailure(call: Call<List<Repository>>, t: Throwable) {
                 Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
@@ -61,6 +64,7 @@ class RepositoryListActivity : AppCompatActivity() {
                 response.body()?.let { list ->
                     adapter.setList(list)
                 }
+                binding.progressBar.isVisible = false
             }
         })
     } 

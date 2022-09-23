@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".presentation.RepositoryListActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -32,13 +33,19 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvlist"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="55dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:itemCount="6"
+        android:layout_height="wrap_content"
+        tools:itemCount="3"
         tools:listitem="@layout/repository_cell_item" />
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <androidx.core.widget.ContentLoadingProgressBar
+        android:id="@+id/progressBar"
+        android:theme="@style/ProgressBar"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="44dp"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:visibility="gone"
+        tools:visibility="visible"/>
+
+</LinearLayout>
