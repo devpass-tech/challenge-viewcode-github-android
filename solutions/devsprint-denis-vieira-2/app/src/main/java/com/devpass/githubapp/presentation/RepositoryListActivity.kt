@@ -38,6 +38,15 @@ class RepositoryListActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.toolbar)
 
+        //Configuração do RecyclerView. Vvvverificar context
+        val adapter = ListAdapter(context = baseContext) {
+            val intent = Intent(this, RepositoryDetailsActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.rvlist.layoutManager = LinearLayoutManager(baseContext)
+        binding.rvlist.adapter = adapter
+        binding.rvlist.setHasFixedSize(true)
 
         val retrofitClient = NetworkUtils.getRetrofitInstance("https://api.github.com")
         val endpoint = retrofitClient.create(GitHubEndpoint::class.java)
@@ -49,59 +58,11 @@ class RepositoryListActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<List<Repository>>, response: Response<List<Repository>>) {
-
-                response.body()?.toString()?.let { Log.d("BODY", it) }
+                response.body()?.let { list ->
+                    adapter.setList(list)
+                }
             }
         })
- 
-        val listRepositories = listOf(
-            RepositoryAdapter(
-                "challenge-github-app",
-                "devpass-tech",
-                "https://avatars.githubusercontent.com/u/81197483?s=200&v=4"
-            ),
-            RepositoryAdapter(
-                "challenge-github-app",
-                "devpass-tech",
-                "https://avatars.githubusercontent.com/u/81197483?s=200&v=4"
-            ),
-            RepositoryAdapter(
-                "challenge-github-app",
-                "devpass-tech",
-                "https://avatars.githubusercontent.com/u/81197483?s=200&v=4"
-            ),
-            RepositoryAdapter(
-                "challenge-github-app",
-                "devpass-tech",
-                "https://avatars.githubusercontent.com/u/81197483?s=200&v=4"
-            ),
-            RepositoryAdapter(
-                "challenge-github-app",
-                "devpass-tech",
-                "https://avatars.githubusercontent.com/u/81197483?s=200&v=4"
-            ),
-            RepositoryAdapter(
-                "challenge-github-app",
-                "devpass-tech",
-                "https://avatars.githubusercontent.com/u/81197483?s=200&v=4"
-            )
-        )
-
-        //Configuração do RecyclerView.
-        val adapter = ListAdapter(context = baseContext)
-
-        //Configuração do RecyclerView. Vvvverificar context
-        val adapter = ListAdapter(context = baseContext) {
-            val intent = Intent(this, RepositoryDetailsActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.rvlist.layoutManager = LinearLayoutManager(baseContext)
-        binding.rvlist.adapter = adapter
-        binding.rvlist.setHasFixedSize(true)
-
-        adapter.setList(listRepositories)
-
     } 
     
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -5,13 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.devpass.githubapp.data.model.Repository
 import com.devpass.githubapp.data.model.RepositoryAdapter
 import com.devpass.githubapp.databinding.RepositoryCellItemBinding
 
 class ListAdapter (private val context: Context, private val onClickItem: () -> Unit ):
     RecyclerView.Adapter<ListAdapter.ListViewHolder>() {
 
-    private var listRepository = emptyList<RepositoryAdapter>()
+    private var listRepository = emptyList<Repository>()
         /**
          * Provide a reference to the type of views that you are using
          * (custom ViewHolder).
@@ -29,16 +30,15 @@ class ListAdapter (private val context: Context, private val onClickItem: () -> 
 
         // Replace the contents of a view (invoked by the layout manager)
         override fun onBindViewHolder(viewHolder: ListViewHolder, position: Int) {
-
             val repository = listRepository[position]
 
-            viewHolder.binding.title.text = repository.nome
+            viewHolder.binding.title.text = repository.name
             viewHolder.itemView.setOnClickListener {
                 onClickItem()
             }
-            viewHolder.binding.subtitle.text = repository.subNome
+            viewHolder.binding.subtitle.text = repository.description
             Glide.with(context)
-                .load(repository.imagem)
+                .load(repository.owner.avatarUrl)
                 .into(viewHolder.binding.imageLogo)
         }
 
@@ -47,7 +47,7 @@ class ListAdapter (private val context: Context, private val onClickItem: () -> 
          return listRepository.size
         }
 
-    fun setList(list: List<RepositoryAdapter>){
+    fun setList(list: List<Repository>){
         listRepository = list
         notifyDataSetChanged()
     }
