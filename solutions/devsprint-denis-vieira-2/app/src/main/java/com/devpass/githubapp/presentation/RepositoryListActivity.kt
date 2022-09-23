@@ -88,9 +88,6 @@ class RepositoryListActivity : AppCompatActivity() {
         )
 
         //Configuração do RecyclerView.
-        val adapter = ListAdapter(context = baseContext)
-
-        //Configuração do RecyclerView. Vvvverificar context
         val adapter = ListAdapter(context = baseContext) {
             val intent = Intent(this, RepositoryDetailsActivity::class.java)
             startActivity(intent)

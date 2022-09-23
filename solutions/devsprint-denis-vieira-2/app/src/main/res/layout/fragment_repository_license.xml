@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.RepositoryLicenseFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardLicense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginStart="@dimen/first_margin"
+        android:layout_marginEnd="@dimen/first_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/layoutPrincipal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Media -->
+            <TextView
+                android:id="@+id/nomeLicense"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/second_margin"
+                android:layout_marginTop="@dimen/second_margin"
+                android:text="@string/nome_gnu_license"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/layoutCodLicense"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/second_margin"
+                android:layout_marginTop="@dimen/first_margin"
+                android:orientation="vertical">
+
+                <!-- Title, secondary and supporting text -->
+
+                <TextView
+                    android:id="@+id/nomeCodLicense"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="@string/nome_codlicense"
+                    android:textAppearance="?attr/textAppearanceBody2"
+                    android:textColor="@color/gray" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layoutButtonLicense"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/second_margin"
+                android:layout_marginTop="@dimen/third_margin"
+                android:layout_marginBottom="@dimen/second_margin"
+                android:orientation="vertical">
+
+                <!-- Title, secondary and supporting text -->
+
+                <Button
+                    android:id="@+id/nomeButtonLicense"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="@string/button_license"
+                    android:textStyle="bold"
+                    android:textColor="@color/blue"
+                    android:padding="0dp"
+                    style="@style/Widget.MaterialComponents.Button.TextButton"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
