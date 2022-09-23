@@ -34,5 +34,7 @@ class RepositoryDetailsActivity : AppCompatActivity() {
 
         }
 
+        supportFragmentManager.beginTransaction().add(R.id.container_header, RepositoryDetailsHeaderFragment()).commit()
+        supportFragmentManager.beginTransaction().add(R.id.container_tabs, TabsFragment()).commit()
     }
 }
