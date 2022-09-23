@@ -10,6 +10,7 @@
 
     <color name="gray">#757575</color>
     <color name="black_02">#212121</color>
+    <color name="blue">#0085FF</color>
 
     <color name="devpass_blue">#FF5084C1</color>
 </resources>
