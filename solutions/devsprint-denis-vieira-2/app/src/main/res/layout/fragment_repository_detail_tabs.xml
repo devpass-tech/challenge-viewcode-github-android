@@ -9,28 +9,7 @@
         android:id="@+id/tabLayout"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_marginTop="16dp" >
-
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:id="@+id/tiabout"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_width="match_parent"-->
-
-<!--            android:text="ABOUT"/>-->
-
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:id="@+id/tiowner"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:text="OWNER"/>-->
-
-<!--        <com.google.android.material.tabs.TabItem-->
-<!--            android:id="@+id/tilicense"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:text="LICENSE"/>-->
-
-    </com.google.android.material.tabs.TabLayout>
+        android:layout_marginTop="16dp" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPager"
