@@ -14,7 +14,7 @@ import com.devpass.githubapp.adapter.TabAdapter
 import com.devpass.githubapp.databinding.FragmentRepositoryDetailTabsBinding
 import com.google.android.material.tabs.TabLayoutMediator
 
-class RepositoryDetailTabsFragment : Fragment(R.layout.fragment_repository_detail_tabs) {
+class RepositoryDetailTabsFragment : Fragment() {
 
     private lateinit var binding: FragmentRepositoryDetailTabsBinding
 
@@ -23,7 +23,6 @@ class RepositoryDetailTabsFragment : Fragment(R.layout.fragment_repository_detai
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_repository_detail_tabs, container, false)
 
         binding = FragmentRepositoryDetailTabsBinding.inflate(inflater, container, false)
         return binding.root

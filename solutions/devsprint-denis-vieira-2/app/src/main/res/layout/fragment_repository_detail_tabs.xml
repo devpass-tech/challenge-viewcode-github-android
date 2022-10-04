@@ -12,14 +12,14 @@
         android:id="@+id/tabsButtonsDetail"
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
-        android:layout_marginTop="04dp" >
+        android:layout_marginTop="@dimen/eighth_margin" >
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/viewPagerTabs"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="@dimen/ninth_margin"
         />
 
 </FrameLayout>
