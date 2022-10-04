@@ -7,5 +7,5 @@
     <dimen name="third_margin">36dp</dimen>
     <dimen name="fourth_margin">12dp</dimen>
     <dimen name="fifth_margin">08dp</dimen>
-    <dimen name="layout_height_Header">144dp</dimen>
+    <dimen name="layout_height_Header">124dp</dimen>
 </resources>
