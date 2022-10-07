@@ -7,5 +7,13 @@
     <dimen name="third_margin">36dp</dimen>
     <dimen name="fourth_margin">12dp</dimen>
     <dimen name="fifth_margin">08dp</dimen>
-    <dimen name="layout_height_Header">144dp</dimen>
+    <dimen name="sixth_margin">24dp</dimen>
+    <dimen name="seventh_margin">28dp</dimen>
+    <dimen name="eighth_margin">04dp</dimen>
+    <dimen name="ninth_margin">52dp</dimen>
+    <dimen name="tenth_margin">56dp</dimen>
+
+    <dimen name="first_padding">0dp</dimen>
+
+    <dimen name="layout_height_Header">124dp</dimen>
 </resources>

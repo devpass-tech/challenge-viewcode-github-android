@@ -21,8 +21,8 @@
             app:popupTheme="@style/Theme.GitHubApp.PopupOverlay">
             <ImageView
                 android:src="@drawable/ic_search"
-                android:layout_width="17.49dp"
-                android:layout_height="17.49dp"
+                android:layout_width="@dimen/default_margin"
+                android:layout_height="@dimen/default_margin"
                 android:layout_gravity="end"
                 />
         </androidx.appcompat.widget.Toolbar>
@@ -33,7 +33,7 @@
         android:id="@+id/rvlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="@dimen/tenth_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

@@ -22,8 +22,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="@dimen/default_margin"
+        android:layout_marginEnd="@dimen/default_margin"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,7 @@
             android:id="@+id/textAppInformation"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="@dimen/sixth_margin"
             android:text="@string/app_information"
             android:textColor="@color/black"
             android:textSize="20sp" />
@@ -51,7 +51,7 @@
                 android:id="@+id/textVersion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="@dimen/sixth_margin"
                 android:layout_weight="1"
                 android:text="@string/version"
                 android:textColor="@color/black"
@@ -61,7 +61,7 @@
                 android:id="@+id/textVersionNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="@dimen/sixth_margin"
                 android:layout_weight="1"
                 android:text="@string/_1_0_0"
                 android:textAlignment="textEnd"
@@ -73,7 +73,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/default_margin"
             android:background="#CCCCCC" />
 
         <LinearLayout
@@ -86,7 +86,7 @@
                 android:id="@+id/textBuild"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="@dimen/sixth_margin"
                 android:layout_weight="1"
                 android:text="@string/build"
                 android:textColor="@color/black"
@@ -96,7 +96,7 @@
                 android:id="@+id/textBuildNumber"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="25dp"
+                android:layout_marginTop="@dimen/sixth_margin"
                 android:layout_weight="1"
                 android:text="@string/_55"
                 android:textAlignment="textEnd"
@@ -108,7 +108,7 @@
         <View
             android:layout_width="match_parent"
             android:layout_height="2dp"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="@dimen/default_margin"
             android:background="#CCCCCC" />
     </LinearLayout>
 

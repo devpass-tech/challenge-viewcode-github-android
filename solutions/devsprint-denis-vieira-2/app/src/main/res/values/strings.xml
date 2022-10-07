@@ -34,5 +34,8 @@
     <string name="titulo_sub_nome_about">Base project for Devpass\' Dev Sprints.</string>
     <string name="nome_owner">Rodrigo Borges</string>
     <string name="sub_nome_owner">Mobile Tech Lead</string>
+    <string name="tab_about">ABOUT</string>
+    <string name="tab_owner">OWNER</string>
+    <string name="tab_license">LICENSE</string>
 
 </resources>

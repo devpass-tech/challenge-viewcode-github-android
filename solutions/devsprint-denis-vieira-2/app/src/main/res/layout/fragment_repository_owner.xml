@@ -13,6 +13,9 @@
         android:layout_height="wrap_content"
         app:cardCornerRadius="@dimen/fourth_margin"
         app:cardBackgroundColor="@color/white"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginStart="@dimen/first_margin"
+        android:layout_marginEnd="@dimen/first_margin"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -47,7 +50,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/default_margin"
-                android:layout_marginTop="@dimen/fourth_margin"
+                android:layout_marginTop="@dimen/fifth_margin"
                 android:layout_marginEnd="@dimen/default_margin"
                 android:layout_marginBottom="@dimen/default_margin"
                 android:orientation="vertical">
