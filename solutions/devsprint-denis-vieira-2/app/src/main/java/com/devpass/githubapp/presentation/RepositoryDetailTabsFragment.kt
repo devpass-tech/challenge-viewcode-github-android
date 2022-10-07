@@ -36,13 +36,16 @@ class RepositoryDetailTabsFragment : Fragment() {
 
     private fun setupTabs() {
         binding.viewPagerTabs.adapter = TabAdapter(this)
+        val about: String = getString(R.string.tab_about)
+        val owner: String = getString(R.string.tab_owner)
+        val license: String = getString(R.string.tab_license)
 
         TabLayoutMediator(binding.tabsButtonsDetail, binding.viewPagerTabs) { tab, position ->
             tab.text =
                 when(position) {
-                    0 -> "ABOUT"
-                    1 -> "OWNER"
-                    2 -> "LICENSE"
+                    0 -> about
+                    1 -> owner
+                    2 -> license
                     else -> ""
                 }
         }.attach()
