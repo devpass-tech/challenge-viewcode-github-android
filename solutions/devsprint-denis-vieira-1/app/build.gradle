@@ -4,14 +4,6 @@ plugins {
     id "kotlin-kapt"
 }
 
-task wrapper(type: Wrapper){
-    gradleVersion = '7.4.1'
-}
-
-task prepareKotlinBuildScriptModel {
-
-}
-
 android {
     compileSdk 31
 
