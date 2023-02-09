@@ -3,6 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.devpass.githubapp.presentation.RepositoryListActivity">
     <item
+        android:id="@+id/search_button"
+        android:icon="@drawable/ic_search"
+        android:title="menuSearch"
+        app:showAsAction="ifRoom"
+        />
+
+    <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
