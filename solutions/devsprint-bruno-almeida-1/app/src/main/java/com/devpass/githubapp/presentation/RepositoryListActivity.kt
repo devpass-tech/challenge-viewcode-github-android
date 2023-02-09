@@ -16,6 +16,7 @@ import retrofit2.Response
 class RepositoryListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var adapter: RepositoryListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,10 +36,11 @@ class RepositoryListActivity : AppCompatActivity() {
             }
 
             override fun onResponse(call: Call<List<Repository>>, response: Response<List<Repository>>) {
+                val repositoryList = response.body() ?: listOf()
 
-                response.body()?.toString()?.let { Log.d("BODY", it) }
+                adapter = RepositoryListAdapter(repositoryList)
+                binding.contentRepositoryListRv.adapter = adapter
             }
         })
     }
-
 }
