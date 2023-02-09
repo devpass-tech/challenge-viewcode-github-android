@@ -1,12 +1,10 @@
 package com.devpass.githubapp.presentation
 
 import android.os.Bundle
-import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.ui.AppBarConfiguration
 import android.widget.Toast
 import com.devpass.githubapp.R
 import com.devpass.githubapp.data.api.GitHubEndpoint
@@ -47,4 +45,19 @@ class RepositoryListActivity : AppCompatActivity() {
             }
         })
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.search_button -> {true}
+            R.id.action_settings -> {true}
+            else -> {super.onOptionsItemSelected(item)}
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
 }

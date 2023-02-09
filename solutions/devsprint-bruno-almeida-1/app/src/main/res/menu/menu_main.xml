@@ -6,8 +6,8 @@
         android:id="@+id/search_button"
         android:icon="@drawable/ic_search"
         android:title="menuSearch"
-        app:showAsAction="ifRoom"
-        />
+        app:actionViewClass="android.widget.SearchView"
+        app:showAsAction="always"/>
 
     <item
         android:id="@+id/action_settings"
