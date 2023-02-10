@@ -22,12 +22,14 @@ class RepositoryListActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        setSupportActionBar(binding.toolbar)
+        setupToolbar()
+        configRetrofit()
+    }
 
+    private fun configRetrofit() {
         val retrofitClient = NetworkUtils.getRetrofitInstance("https://api.github.com")
         val endpoint = retrofitClient.create(GitHubEndpoint::class.java)
         val callback = endpoint.getRepositories("devpass-tech")
@@ -44,6 +46,10 @@ class RepositoryListActivity : AppCompatActivity() {
                 binding.contentRepositoryListRv.adapter = adapter
             }
         })
+    }
+
+    private fun setupToolbar() {
+        setSupportActionBar(binding.toolbar)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
