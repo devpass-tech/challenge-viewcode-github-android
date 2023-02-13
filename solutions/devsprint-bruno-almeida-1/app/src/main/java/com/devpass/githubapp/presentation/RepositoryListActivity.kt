@@ -26,26 +26,12 @@ class RepositoryListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupToolbar()
-        configRetrofit()
+        setupRv()
     }
 
-    private fun configRetrofit() {
-        val retrofitClient = NetworkUtils.getRetrofitInstance("https://api.github.com")
-        val endpoint = retrofitClient.create(GitHubEndpoint::class.java)
-        val callback = endpoint.getRepositories("devpass-tech")
-
-        callback.enqueue(object : Callback<List<Repository>> {
-            override fun onFailure(call: Call<List<Repository>>, t: Throwable) {
-                Toast.makeText(baseContext, t.message, Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onResponse(call: Call<List<Repository>>, response: Response<List<Repository>>) {
-                val repositoryList = response.body() ?: listOf()
-
-                adapter = RepositoryListAdapter(repositoryList)
-                binding.contentRepositoryListRv.adapter = adapter
-            }
-        })
+    private fun setupRv() {
+        adapter = RepositoryListAdapter(repositoryList)
+        binding.contentRepositoryListRv.adapter = adapter
     }
 
     private fun setupToolbar() {
