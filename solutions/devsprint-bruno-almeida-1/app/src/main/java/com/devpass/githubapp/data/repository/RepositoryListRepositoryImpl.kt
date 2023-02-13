@@ -9,7 +9,7 @@ class RepositoryListRepositoryImpl(
 ): RepositoryListRepository {
 
     override fun getRepositories(): Call<List<Repository>> {
-        val callback = repositoryListDataSource.getRepositories("devpass-tech")
-        return  getRepositories()
+        return repositoryListDataSource.getRepositories(
+            "devpass-tech")
     }
 }

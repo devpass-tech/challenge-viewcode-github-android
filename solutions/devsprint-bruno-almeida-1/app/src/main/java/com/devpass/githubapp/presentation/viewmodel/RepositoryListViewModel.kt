@@ -1,5 +1,7 @@
 package com.devpass.githubapp.presentation.viewmodel
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.devpass.githubapp.data.model.Repository
 import com.devpass.githubapp.data.repository.RepositoryListRepository
@@ -10,6 +12,9 @@ import retrofit2.Response
 class RepositoryListViewModel(
     private val repository: RepositoryListRepository
 ):ViewModel() {
+
+    private var _repositoriesList : MutableLiveData<List<Repository>> = MutableLiveData()
+    val repositoryList : LiveData<List<Repository>> = _repositoriesList
 
     init {
         getListRepositories()
@@ -23,7 +28,7 @@ class RepositoryListViewModel(
             override fun onResponse(
                 call: Call<List<Repository>>, response: Response<List<Repository>>
             ) {
-                val repositoryList = response.body() ?: listOf()
+                _repositoriesList.value = response.body() ?: listOf()
             }
         })
     }
