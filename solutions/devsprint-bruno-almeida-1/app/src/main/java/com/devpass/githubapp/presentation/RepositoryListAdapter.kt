@@ -8,7 +8,7 @@ import com.devpass.githubapp.data.model.Repository
 import com.devpass.githubapp.databinding.RepositoryCellItemBinding
 
 class RepositoryListAdapter(
-    private val repositoryList : List<Repository>
+    private var repositoryList : List<Repository>
 ) : RecyclerView.Adapter<RepositoryCellItem>() {
 
     override fun onCreateViewHolder(
@@ -27,4 +27,8 @@ class RepositoryListAdapter(
         holder.bind(repositoryList[position])
     }
 
+    fun updateList(newList: MutableList<Repository>){
+        repositoryList = newList
+        notifyDataSetChanged()
+    }
 }
