@@ -6,10 +6,11 @@ import retrofit2.Call
 
 class RepositoryListRepositoryImpl(
     private val repositoryListDataSource: RepositoryListDataSource
-): RepositoryListRepository {
+) : RepositoryListRepository {
 
     override fun getRepositories(): Call<List<Repository>> {
         return repositoryListDataSource.getRepositories(
-            "devpass-tech")
+            "devpass-tech"
+        )
     }
 }

@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
-import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.devpass.githubapp.R
 import com.devpass.githubapp.data.api.GitHubEndpoint
@@ -20,7 +19,8 @@ import com.devpass.githubapp.utils.NetworkUtils
 class RepositoryListActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
-    private val service: GitHubEndpoint = NetworkUtils.getRetrofitInstance.create(GitHubEndpoint::class.java)
+    private val service: GitHubEndpoint =
+        NetworkUtils.getRetrofitInstance.create(GitHubEndpoint::class.java)
     private val dataSource: RepositoryListDataSource = RepositoryListDataSourceImpl(service)
     private val repository: RepositoryListRepository = RepositoryListRepositoryImpl(dataSource)
     private val viewModel: RepositoryListViewModel = RepositoryListViewModel(repository)
@@ -32,7 +32,7 @@ class RepositoryListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setupToolbar()
-        viewModel.repositoryList.observe(this){
+        viewModel.repositoryList.observe(this) {
             setupRv(it)
         }
     }
@@ -48,9 +48,15 @@ class RepositoryListActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.search_button -> {true}
-            R.id.action_settings -> {true}
-            else -> {super.onOptionsItemSelected(item)}
+            R.id.search_button -> {
+                true
+            }
+            R.id.action_settings -> {
+                true
+            }
+            else -> {
+                super.onOptionsItemSelected(item)
+            }
         }
     }
 
@@ -58,7 +64,9 @@ class RepositoryListActivity : AppCompatActivity() {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.menu_main, menu)
         return true
-    } private fun observer() {
+    }
+
+    private fun observer() {
         viewModel.repositoryList.observe(this) {
             adapter.updateList(it as MutableList<Repository>)
         }

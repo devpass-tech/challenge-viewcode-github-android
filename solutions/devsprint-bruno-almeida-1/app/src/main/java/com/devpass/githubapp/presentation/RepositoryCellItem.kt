@@ -1,6 +1,5 @@
 package com.devpass.githubapp.presentation
 
-import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.devpass.githubapp.data.model.Repository
@@ -10,7 +9,7 @@ class RepositoryCellItem(
     private val binding: RepositoryCellItemBinding
 ) : RecyclerView.ViewHolder(binding.root) {
 
-    fun bind(item : Repository){
+    fun bind(item: Repository) {
         with(binding) {
             repositoryCellItemTitle.text = item.name
             repositoryCellItemOwner.text = item.owner.login
