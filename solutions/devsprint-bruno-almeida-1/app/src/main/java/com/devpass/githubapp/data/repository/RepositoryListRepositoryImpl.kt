@@ -8,9 +8,9 @@ class RepositoryListRepositoryImpl(
     private val repositoryListDataSource: RepositoryListDataSource
 ) : RepositoryListRepository {
 
-    override fun getRepositories(): Call<List<Repository>> {
+    override fun getRepositories(query: String): Call<List<Repository>> {
         return repositoryListDataSource.getRepositories(
-            "devpass-tech"
+            "devpass-tech-${query}"
         )
     }
 }

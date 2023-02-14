@@ -12,16 +12,29 @@ import retrofit2.Response
 class RepositoryListViewModel(
     private val repository: RepositoryListRepository
 ) : ViewModel() {
-
     private var _repositoriesList: MutableLiveData<List<Repository>> = MutableLiveData()
     val repositoryList: LiveData<List<Repository>> = _repositoriesList
 
-    init {
+    /*init {
         getListRepositories()
+    }*/
+
+    fun getListRepositories() {
+        repository.getRepositories("").enqueue(
+            object : Callback<List<Repository>> {
+                override fun onFailure(call: Call<List<Repository>>, t: Throwable) {
+                }
+
+                override fun onResponse(
+                    call: Call<List<Repository>>, response: Response<List<Repository>>
+                ) {
+                    _repositoriesList.value = response.body() ?: listOf()
+                }
+            })
     }
 
-    private fun getListRepositories() {
-        repository.getRepositories().enqueue(
+    fun searchRepository(query: String){
+        repository.getRepositories(query).enqueue(
             object : Callback<List<Repository>> {
                 override fun onFailure(call: Call<List<Repository>>, t: Throwable) {
                 }
