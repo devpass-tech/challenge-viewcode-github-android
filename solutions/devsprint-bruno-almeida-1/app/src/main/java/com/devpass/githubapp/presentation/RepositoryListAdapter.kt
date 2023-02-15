@@ -8,11 +8,12 @@ import com.devpass.githubapp.data.model.Repository
 import com.devpass.githubapp.databinding.RepositoryCellItemBinding
 
 class RepositoryListAdapter(
-    private val repositoryList : List<Repository>
+    private var repositoryList: List<Repository>
 ) : RecyclerView.Adapter<RepositoryCellItem>() {
 
     override fun onCreateViewHolder(
-        parent: ViewGroup, viewType: Int): RepositoryCellItem {
+        parent: ViewGroup, viewType: Int
+    ): RepositoryCellItem {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.repository_cell_item, parent, false)
         return RepositoryCellItem(RepositoryCellItemBinding.bind(view))
@@ -23,8 +24,13 @@ class RepositoryListAdapter(
     }
 
     override fun onBindViewHolder(
-        holder: RepositoryCellItem, position: Int) {
+        holder: RepositoryCellItem, position: Int
+    ) {
         holder.bind(repositoryList[position])
     }
 
+    fun updateList(newList: MutableList<Repository>) {
+        repositoryList = newList
+        notifyDataSetChanged()
+    }
 }
