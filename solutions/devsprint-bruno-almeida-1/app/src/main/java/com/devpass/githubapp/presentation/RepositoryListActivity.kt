@@ -85,7 +85,7 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
     override fun onQueryTextChange(p0: String): Boolean {
         p0.let {
             if (it.isEmpty()){
-                viewModel.repositoryList
+                viewModel.getListRepositories()
             }
         }
         return true
