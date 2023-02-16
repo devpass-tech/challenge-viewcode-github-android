@@ -20,7 +20,7 @@ class RepositoryListViewModel(
     }*/
 
     fun getListRepositories() {
-        repository.getRepositories("").enqueue(
+        repository.getRepositories("devpass-tech").enqueue(
             object : Callback<List<Repository>> {
                 override fun onFailure(call: Call<List<Repository>>, t: Throwable) {
                 }

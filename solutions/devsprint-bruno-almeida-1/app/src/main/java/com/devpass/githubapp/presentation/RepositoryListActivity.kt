@@ -1,14 +1,10 @@
 package com.devpass.githubapp.presentation
 
-import android.app.SearchManager
-import android.content.Context
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.SearchView.OnQueryTextListener
+import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SearchView
 import com.devpass.githubapp.R
 import com.devpass.githubapp.data.api.GitHubEndpoint
 import com.devpass.githubapp.data.datasource.RepositoryListDataSource
@@ -86,7 +82,12 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
         return true
     }
 
-    override fun onQueryTextChange(p0: String?): Boolean {
+    override fun onQueryTextChange(p0: String): Boolean {
+        p0.let {
+            if (it.isEmpty()){
+                viewModel.repositoryList
+            }
+        }
         return true
     }
 
