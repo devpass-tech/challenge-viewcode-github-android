@@ -1,14 +1,10 @@
 package com.devpass.githubapp.presentation
 
-import android.app.SearchManager
-import android.content.Context
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
-import android.widget.SearchView.OnQueryTextListener
+import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.SearchView
 import com.devpass.githubapp.R
 import com.devpass.githubapp.data.api.GitHubEndpoint
 import com.devpass.githubapp.data.datasource.RepositoryListDataSource
@@ -39,7 +35,7 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
         viewModel.repositoryList.observe(this) {
             setupRv(it)
         }
-        viewModel.getListRepositories()
+        //viewModel.getListRepositories()
     }
 
     private fun setupRv(repositoryList: List<Repository>) {
@@ -82,7 +78,6 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
 
     override fun onQueryTextSubmit(p0: String?): Boolean {
         viewModel.searchRepository(p0 ?: "")
-
         return true
     }
 
