@@ -40,9 +40,7 @@ class RepositoryListViewModel @Inject constructor(
 
                 override fun onResponse(
                     call: Call<List<Repository>>, response: Response<List<Repository>>
-                ) {
-                    _repositoriesList.value = response.body() ?: listOf()
-                }
+                ) {_repositoriesList.value = response.body() ?: listOf()}
             })
     }
 }

@@ -31,7 +31,7 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
         viewModel.repositoryList.observe(this) {
             setupRv(it)
         }
-        viewModel.getListRepositories()
+        //viewModel.getListRepositories()
     }
 
     private fun setupRv(repositoryList: List<Repository>) {
@@ -74,13 +74,12 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
 
     override fun onQueryTextSubmit(p0: String?): Boolean {
         viewModel.searchRepository(p0 ?: "")
-
         return true
     }
 
     override fun onQueryTextChange(p0: String): Boolean {
         p0.let {
-            if (it.isEmpty()) {
+            if (it.isEmpty()){
                 viewModel.getListRepositories()
             }
         }
