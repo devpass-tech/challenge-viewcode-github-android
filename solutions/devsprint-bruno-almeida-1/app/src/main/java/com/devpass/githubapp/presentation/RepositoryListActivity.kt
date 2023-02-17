@@ -6,24 +6,20 @@ import android.view.MenuItem
 import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import com.devpass.githubapp.R
-import com.devpass.githubapp.data.api.GitHubEndpoint
-import com.devpass.githubapp.data.datasource.RepositoryListDataSource
-import com.devpass.githubapp.data.datasource.RepositoryListDataSourceImpl
 import com.devpass.githubapp.data.model.Repository
-import com.devpass.githubapp.data.repository.RepositoryListRepository
-import com.devpass.githubapp.data.repository.RepositoryListRepositoryImpl
 import com.devpass.githubapp.databinding.ActivityMainBinding
 import com.devpass.githubapp.presentation.viewmodel.RepositoryListViewModel
-import com.devpass.githubapp.utils.NetworkUtils
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
+@AndroidEntryPoint
 class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
     private lateinit var binding: ActivityMainBinding
-    private val service: GitHubEndpoint =
-        NetworkUtils.getRetrofitInstance.create(GitHubEndpoint::class.java)
-    private val dataSource: RepositoryListDataSource = RepositoryListDataSourceImpl(service)
-    private val repository: RepositoryListRepository = RepositoryListRepositoryImpl(dataSource)
-    private val viewModel: RepositoryListViewModel = RepositoryListViewModel(repository)
+
+    @Inject
+    lateinit var viewModel: RepositoryListViewModel
+
     private lateinit var adapter: RepositoryListAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,7 +80,7 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
 
     override fun onQueryTextChange(p0: String): Boolean {
         p0.let {
-            if (it.isEmpty()){
+            if (it.isEmpty()) {
                 viewModel.getListRepositories()
             }
         }
