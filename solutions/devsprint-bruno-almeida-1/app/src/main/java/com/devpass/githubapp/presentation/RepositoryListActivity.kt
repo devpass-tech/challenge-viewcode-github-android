@@ -2,8 +2,8 @@ package com.devpass.githubapp.presentation
 
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuInflater
 import android.view.MenuItem
+import android.widget.SearchView
 import androidx.appcompat.app.AppCompatActivity
 import com.devpass.githubapp.R
 import com.devpass.githubapp.data.api.GitHubEndpoint
@@ -16,7 +16,7 @@ import com.devpass.githubapp.databinding.ActivityMainBinding
 import com.devpass.githubapp.presentation.viewmodel.RepositoryListViewModel
 import com.devpass.githubapp.utils.NetworkUtils
 
-class RepositoryListActivity : AppCompatActivity() {
+class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
     private lateinit var binding: ActivityMainBinding
     private val service: GitHubEndpoint =
@@ -35,6 +35,7 @@ class RepositoryListActivity : AppCompatActivity() {
         viewModel.repositoryList.observe(this) {
             setupRv(it)
         }
+        //viewModel.getListRepositories()
     }
 
     private fun setupRv(repositoryList: List<Repository>) {
@@ -61,8 +62,11 @@ class RepositoryListActivity : AppCompatActivity() {
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.menu_main, menu)
+        menuInflater.inflate(R.menu.menu_main, menu)
+
+        val searchView = menu.findItem(R.id.search_button).actionView as SearchView
+        searchView.setOnQueryTextListener(this)
+
         return true
     }
 
@@ -71,5 +75,20 @@ class RepositoryListActivity : AppCompatActivity() {
             adapter.updateList(it as MutableList<Repository>)
         }
     }
+
+    override fun onQueryTextSubmit(p0: String?): Boolean {
+        viewModel.searchRepository(p0 ?: "")
+        return true
+    }
+
+    override fun onQueryTextChange(p0: String): Boolean {
+        p0.let {
+            if (it.isEmpty()){
+                viewModel.getListRepositories()
+            }
+        }
+        return true
+    }
+
 
 }
