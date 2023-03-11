@@ -6,13 +6,13 @@ data class Repository(
     @SerializedName("name")
     var name : String,
     @SerializedName("description")
-    var description : String,
+    var description : String?,
     @SerializedName("stargazers_count")
-    var stargazersCount : Int,
+    var stargazersCount : Int?,
     @SerializedName("forks_count")
-    var forksCount : Int,
+    var forksCount : Int?,
     @SerializedName("owner")
     var owner : Owner,
     @SerializedName("license")
-    var license : License
+    var license : License?
 )

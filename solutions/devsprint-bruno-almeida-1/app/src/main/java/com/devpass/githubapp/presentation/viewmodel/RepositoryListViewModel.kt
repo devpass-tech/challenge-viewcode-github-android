@@ -5,19 +5,18 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.devpass.githubapp.data.model.Repository
 import com.devpass.githubapp.data.repository.RepositoryListRepository
+import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import javax.inject.Inject
 
-class RepositoryListViewModel(
+@HiltViewModel
+class RepositoryListViewModel @Inject constructor(
     private val repository: RepositoryListRepository
 ) : ViewModel() {
     private var _repositoriesList: MutableLiveData<List<Repository>> = MutableLiveData()
     val repositoryList: LiveData<List<Repository>> = _repositoriesList
-
-    init {
-        getListRepositories()
-    }
 
     fun getListRepositories() {
         repository.getRepositories("devpass-tech").enqueue(
@@ -33,7 +32,7 @@ class RepositoryListViewModel(
             })
     }
 
-    fun searchRepository(query: String){
+    fun searchRepository(query: String) {
         repository.getRepositories(query).enqueue(
             object : Callback<List<Repository>> {
                 override fun onFailure(call: Call<List<Repository>>, t: Throwable) {
