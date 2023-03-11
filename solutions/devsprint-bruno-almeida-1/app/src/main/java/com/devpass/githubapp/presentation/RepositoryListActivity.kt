@@ -31,7 +31,7 @@ class RepositoryListActivity : AppCompatActivity(), SearchView.OnQueryTextListen
         viewModel.repositoryList.observe(this) {
             setupRv(it)
         }
-        //viewModel.getListRepositories()
+        viewModel.getListRepositories()
     }
 
     private fun setupRv(repositoryList: List<Repository>) {

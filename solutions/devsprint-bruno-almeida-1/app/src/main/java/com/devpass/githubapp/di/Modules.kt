@@ -27,8 +27,6 @@ abstract class Modules {
     abstract fun bindRepositoryListRepository(
         repositoryListRepository: RepositoryListRepositoryImpl
     ): RepositoryListRepository
-
-
 }
 
 @Module
